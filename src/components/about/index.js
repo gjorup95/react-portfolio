@@ -13,13 +13,15 @@ import {
 import CustomLoader from '../customLoader/index'
 import { motion } from 'framer-motion'
 
+
 const About = (props) => {
   const [letterClass, setLetterClass] = useState('text-animate')
   //const RENDER_DURATION = 3000
   const details = {
     about: 'Om mig',
   }
-  const [childDataLoadStatus, setChildDataLoadStatus] = useState('NEUTRAL')
+  
+  const [loading, setChildDataLoadStatus] = useState('NEUTRAL')
   const passData = (data) => {
     setChildDataLoadStatus(data)
   }
@@ -47,8 +49,8 @@ const About = (props) => {
   // keep state
 
   useEffect(() => {
-    window.localStorage.setItem('ABOUT_LOAD_STATUS', childDataLoadStatus)
-  }, [childDataLoadStatus])
+    window.localStorage.setItem('ABOUT_LOAD_STATUS', loading)
+  }, [loading])
 
   const generateParagraphs = () => {
     return (
@@ -100,17 +102,15 @@ const About = (props) => {
       </div>
     )
   }
-  console.log(props)
-  console.log(childDataLoadStatus)
+  
+ console.log(props)
 
-  if (childDataLoadStatus === true || childDataLoadStatus === '')
-    return (
+ return (    
       <>
-        <CustomLoader passData={passData}>{console.log('nej')}</CustomLoader>
-      </>
-    )
-  return (
-    <>
+      {loading === false ? (
+        
+    
+    
       <div className="container about-page">
         <div className="text-zone">
           <h1>
@@ -124,9 +124,12 @@ const About = (props) => {
           {generateParagraphs()}
         </div>
         {generateSpinner()}
-      </div>
-    </>
-  )
-}
 
+      </div> ): 
+      (
+      <CustomLoader >{console.log('nej')}</CustomLoader>)}
+    </>
+ )
+      }
+// <CustomLoader passData={passData}>{console.log('nej')}</CustomLoader>
 export default About
