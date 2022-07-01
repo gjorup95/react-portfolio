@@ -10,21 +10,16 @@ import {
   faNode,
   faReact,
 } from '@fortawesome/free-brands-svg-icons'
-import CustomLoader from '../customLoader/index'
-import { motion } from 'framer-motion'
-
+import IsLoadingHOC from '../customLoader/IsLoadingHOC'
 
 const About = (props) => {
   const [letterClass, setLetterClass] = useState('text-animate')
+
   //const RENDER_DURATION = 3000
   const details = {
     about: 'Om mig',
   }
   
-  const [loading, setChildDataLoadStatus] = useState('NEUTRAL')
-  const passData = (data) => {
-    setChildDataLoadStatus(data)
-  }
 
   /*
   useEffect(() => {
@@ -33,25 +28,8 @@ const About = (props) => {
     }, RENDER_DURATION)
   }, [childDataLoadStatus])
   */
-  useEffect(() => {
-    return () => {
-      window.localStorage.removeItem('ABOUT_LOAD_STATUS')
-    }
-  }, [])
-
-  useEffect(() => {
-    const data = window.localStorage.getItem('ABOUT_LOAD_STATUS')
-    if (data !== null) {
-      setChildDataLoadStatus(data)
-    }
-  }, [])
-
-  // keep state
-
-  useEffect(() => {
-    window.localStorage.setItem('ABOUT_LOAD_STATUS', loading)
-  }, [loading])
-
+  
+ 
   const generateParagraphs = () => {
     return (
       <div>
@@ -102,34 +80,23 @@ const About = (props) => {
       </div>
     )
   }
-  
- console.log(props)
 
- return (    
-      <>
-      {loading === false ? (
-        
-    
-    
-      <div className="container about-page">
-        <div className="text-zone">
-          <h1>
-            <AnimateLetters
-              letterClass={letterClass}
-              stringToAnimate={details.about}
-              passedIndex={15}
-            />
-          </h1>
+  return (
+    <div className="container about-page">
+      <div className="text-zone">
+        <h1>
+          <AnimateLetters
+            letterClass={letterClass}
+            stringToAnimate={details.about}
+            passedIndex={15}
+          />
+        </h1>
 
-          {generateParagraphs()}
-        </div>
-        {generateSpinner()}
+        {generateParagraphs()}
+      </div>
+      {generateSpinner()}
+    </div>
+  )
+}
 
-      </div> ): 
-      (
-      <CustomLoader >{console.log('nej')}</CustomLoader>)}
-    </>
- )
-      }
-// <CustomLoader passData={passData}>{console.log('nej')}</CustomLoader>
-export default About
+export default IsLoadingHOC(About, 'Loading...')

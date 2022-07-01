@@ -2,11 +2,10 @@ import React, { useRef } from 'react'
 import { Progress } from 'semantic-ui-react'
 import './index.scss'
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-const CustomLoader = (props) => {
+const NewCustomLoader = (props) => {
   const [loader, setLoader] = useState(0)
-  const [loadScreenStatus, setLoadScreenStatus] = useState(true)
   const timerRef = useRef(null)
+  const { setLoading } = props
   let loadNum = 0
   const animate = () => {
     loadNum += 1
@@ -19,7 +18,7 @@ const CustomLoader = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoadScreenStatus(false)
+      setLoading(false)
     }, 2000)
     setTimeout(() => {
       timerRef.current = setInterval(() => {
@@ -31,11 +30,15 @@ const CustomLoader = (props) => {
   }, [])
 
   return (
-    <div className="spinner">
-      <h3 className="spinner-text">Loading...</h3>
-      <Progress percent={loader} size="tiny" />
-    </div>
+    <>
+      <div className="spinner">
+        <h3 className="spinner-text">{props.message}</h3>
+        <Progress percent={loader} size="tiny" />
+      </div>
+    </>
   )
 }
-
-export default CustomLoader
+NewCustomLoader.defaultProps = {
+  message: 'Loading...',
+}
+export default NewCustomLoader
