@@ -15,21 +15,17 @@ import IsLoadingHOC from '../customLoader/IsLoadingHOC'
 const About = (props) => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
-  //const RENDER_DURATION = 3000
+  const RENDER_DURATION = 3000
   const details = {
     about: 'Om mig',
   }
-  
 
-  /*
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, RENDER_DURATION)
-  }, [childDataLoadStatus])
-  */
-  
- 
+  }, [])
+
   const generateParagraphs = () => {
     return (
       <div>

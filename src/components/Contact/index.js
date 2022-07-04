@@ -1,10 +1,10 @@
 import './index.scss'
-import CustomLoader from '../customLoader'
 import AnimateLetters from '../AnimateLetters'
 import { useState, useEffect, useRef } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import emailjs from '@emailjs/browser'
 import Alerts from '../alerts'
+import IsLoadingHOC from '../customLoader/IsLoadingHOC'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -116,4 +116,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default IsLoadingHOC(Contact, 'Loading...')
