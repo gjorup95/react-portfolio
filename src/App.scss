@@ -47,3 +47,37 @@ body {
   
 
 }
+:root {
+  // COLORS
+  --color-primary: hsla(201, 88%, 25%, 0.686);
+  --color-secondary: hsla(173, 52%, 68%, 0.69);
+
+  // .TEXT
+  --textColor-primary: #fff;
+  --textColor-yellow: #ffd700;
+  --textColor-light: rgba(255,255,255, 0.6);
+  
+  // FONTS
+  --font-primaryHeader: 'Bebas Neue', 'cursive';
+  --font-cursiveHeader: 'La Belle Aurore', 'cursive';
+  --font-base: 'Oxygen', 'sans-serif';
+ 
+  // Sizes 1rem
+  font-size: 16px;
+
+  //Hover
+  --hover-background: var(--textColor-yellow);
+  --hover-color: #333;
+
+  h1{
+    font-size: 4rem;
+    font-family: var(--font-primaryHeader);
+    color:  var(--textColor-primary);
+  }
+  h2{
+    font-size: 1rem;
+    font-family: var(--font-base);
+    color: var(--textColor-light);
+  }
+
+}

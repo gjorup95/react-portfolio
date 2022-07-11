@@ -8,53 +8,44 @@
     }
   
     h1 {
-      color: #fff;
-      font-size: 4rem;
-      line-height: 53px;
+      line-height: 3.725rem;
       margin: 0;
-      font-family: 'Bebas Neue', "cursive";
-      
   
       &:before {
         content: '<h1>';
         font-family: 'La Belle Aurore' , "cursive";
-        color: #ffd700;
-        font-size: 18px;
+        color: var(--textColor-yellow);
+        font-size: 1.125rem;;
         position: absolute;
-        margin-top: -40px;
-        left: -15px;
+        margin-top: -2.5rem;
+        left: -0.9375rem;
         opacity: 0.8;
       }
   
       &:after {
         content: '<h1/>';
         font-family: 'La Belle Aurore', cursive;
-        color: #ffd700;
-        font-size: 18px;
+        font-size: 1.125rem;
+        color: var(--textColor-yellow);
         position: absolute;
-        margin-top: 18px;
-        margin-left: 20px;
+        margin-top: 1.125rem;
+        margin-left: 1.25rem;
         opacity: 0.8;
       }
-  
-      
     }
   
     h2 {
-      color: #C0C0C0;
       margin-top: 1rem;
-      font-weight: 300;
-      font-size: 0.8rem;
-      font-family: "Oxygen", 'sans-serif';
-      letter-spacing: 3px;
+      font-weight: 200;
+      letter-spacing: 0.25rem;
       animation: fadeIn 1s 0.3s backwards;
     }
   
     .flat-button {
-      color: #ffd700;
+      color: var(--textColor-yellow);
       font-size: 1rem;
       font-weight: 400;
-      letter-spacing: 4px;
+      letter-spacing: 0.25rem;
       font-family: "Oxygen", 'sans-serif';
       text-decoration: none;
       padding: 10px 18px;
@@ -65,8 +56,8 @@
       white-space: nowrap;
   
       &:hover {
-        background: #ffd700;
-        color: #333;
+        background: var(--hover-background);
+        color: var(--hover-color)
       }
     }
   }
