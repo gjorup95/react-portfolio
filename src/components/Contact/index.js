@@ -44,14 +44,13 @@ const Contact = () => {
   return (
     <>
       <div className="container contact-page">
-        <Alerts formStatus={formStatus} formRef={form}></Alerts>
         <div className="text-zone">
           <h1>
             <AnimateLetters
               letterClass={letterClass}
               stringToAnimate={'Kontakt Mig'}
               passedIndex={15}
-            ></AnimateLetters>
+            />
           </h1>
 
           <p>
@@ -61,43 +60,33 @@ const Contact = () => {
             Har du spørgsmål eller henvendelser er du meget velkommen til at
             kontakte mig.
           </p>
-          <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
-              <ul>
-                <li className="half">
-                  <input placeholder="Navn" type="text" name="name" required />
-                </li>
-                <li className="half">
-                  <input
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Emne"
-                    type="text"
-                    name="subject"
-                    required
-                  />
-                </li>
-                <li>
-                  <textarea
-                    placeholder="Besked..."
-                    name="message"
-                    required
-                  ></textarea>
-                </li>
-                <li>
-                  <input type="submit" className="flat-button" value="SEND" />
-                </li>
-              </ul>
-            </form>
-          </div>
+
+          <form ref={form} onSubmit={sendEmail} className="contact-form">
+            <ul>
+              <li className="half">
+                <input placeholder="Navn" type="text" name="name" required />
+              </li>
+              <li className="half">
+                <input placeholder="Email" type="email" name="email" required />
+              </li>
+              <li className="emne">
+                <input placeholder="Emne" type="text" name="subject" required />
+              </li>
+              <li className="textBox">
+                <textarea
+                  placeholder="Besked..."
+                  name="message"
+                  required
+                ></textarea>
+              </li>
+              <li className="buttonPlacement">
+                <input type="submit" className="flat-button" value="SEND" />
+              </li>
+            </ul>
+          </form>
         </div>
       </div>
+
       <div className="map-wrap">
         <MapContainer
           center={[56.17547802941453, 10.204873863180014]}
@@ -112,6 +101,7 @@ const Contact = () => {
           <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
         </MapContainer>
       </div>
+      <Alerts formStatus={formStatus} formRef={form} />
     </>
   )
 }

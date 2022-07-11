@@ -7,22 +7,22 @@
   
   .top-tags {
     bottom: auto;
-    top: 35px;
+    top: 2.2rem;
   }
   
   .tags {
     color: #ffd700;
-    opacity: 0.6;
+    opacity: 0.8;
     position: absolute;
     bottom: 0;
-    left: 120px;
-    font-size: 18px;
+    left: 8.5rem;
+    font-size: 1.5rem;
     font-family: 'La Belle Aurore', cursive;
     
   }
   
   .bottom-tag-html {
-    margin-left: -20px;
+    margin-left: -1.4rem;
   }
   
   .container {
@@ -53,14 +53,14 @@
   
   
       h1 {
-        font-size: 53px;
-        font-family: 'Raleway', sans-serif;
+        font-size: 4rem;
+        font-family: 'Bebas Neue';
         color: #ffd700;
         margin-top: 0;
         position: relative;
         margin-bottom: 40px;
         left: -2px;
-        font-weight: 700;
+        
         
         &:before {
           content: '<h1>';
@@ -70,7 +70,7 @@
           position: absolute;
           margin-top: -10px;
           left: -10px;
-          opacity: 0.6;
+          opacity: 0.8;
           line-height: 18px;
         }
   
@@ -84,19 +84,16 @@
           left: -30px;
           bottom: -20px;
           margin-left: 20px;
-          opacity: 0.6;
+          opacity: 0.8;
         }
       }
   
       p {
-        font-size: 13px;
+        font-size: 1rem;
         color: #FFFAFA;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 300;
+        font-family: "Oxygen", sans-serif;
         max-width: fit-content;
         opacity: 1;
-        
-        
         animation: fadeIn 2s;
         
       
@@ -122,8 +119,8 @@
     max-height: 90%;
 
     h1{
-      font-size: 53px;
-      font-family: 'Raleway' ;
+      font-size: 3rem;
+      font-family: 'Bebas Neue' ;
       color: #ffd700;
       margin-top: 0 ;
       position: relative;
@@ -137,7 +134,7 @@
         position: absolute;
         margin-top: -10px;
         left:-10px;
-        opacity: 0.6;
+        opacity: 0.8;
         line-height: 18px;
       }
       &::after{
@@ -149,12 +146,12 @@
         left: -30px;
         bottom: -20px;
         margin-left: -20px;
-        opacity: 0.6;
+        opacity: 0.8;
       }
       p{
-        font-style: 13px;
+        font-style: 1rem;
         color: #FFFAFA;
-        font-family: sans-serif;
+        font-family: "Oxygen" "sans-serif";
         font-weight: 300;
         min-width: fit-content;
         animation: pulse 1s;

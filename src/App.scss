@@ -4,14 +4,6 @@ $primary-color: #ffd700;
 @import 'semantic-ui-css/semantic.min.css';
 
 
-
-@font-face {
-  font-family:  'Helvetica Neue';
-  src: url('./assets/fonts/helvetica-neu.ttf') format ('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family:  'La Belle Aurore';
   src: url('./assets/fonts/LaBelleAurore.woff2') format('woff2'),
@@ -19,38 +11,39 @@ $primary-color: #ffd700;
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Bebas Neue', cursive;
+  src: url('./assets/fonts/BebasNeue-Regular.ttf');
+}
+@font-face { 
+  font-family: 'Oxygen', sans-serif;
+  src: url('./assets/fonts/Oxygen-Regular.ttf');
+}
 
-@font-face {
-  font-family:  'Coolvetica';
-  src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2'),
-  url('./assets/fonts/CoolveticaRg-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family:  'Raleway';
-  src: url('./assets/fonts/Raleway-VariableFont_wght.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
+
+
 input, 
 textarea {
-  font-family: 'Helvetica Neue';
+  font-family: 'Oxygen', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
+  font-family:  'Oxygen', sans-serif;
+  font-size:  1rem;
+  line-height: 1.7;
   color: #444;
-  
-  
-  
-  
   overflow: hidden;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .page {
-  background: linear-gradient(to right, #085078, #85d8ce);
+ 
+  background-image:  
+   linear-gradient(to right, #085178af, #85d8ceb0),
+   url('../src/assets/images/sky1920x1280.png');
+   background-size: cover;
+  
+
 }
