@@ -11,13 +11,13 @@
 .spinner-text{
     text-align: center;
     margin: auto;
-    font-family: 'La Belle Aurore';
-    margin-bottom: 6px;
-    color: #ffd700;
+    font-family: var(--font-cursiveHeader);
+    margin-bottom: 0.5rem;
+    color: var(--textColor-yellow);
 }
 .ui.progress .bar{
     min-width: 0;
-    background: linear-gradient(to right, #76c8c4, #ffd700);
+    background: linear-gradient(to left, var(--color-secondary), var(--textColor-yellow));
     border-radius: 0;
 
 }

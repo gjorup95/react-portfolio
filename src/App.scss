@@ -1,4 +1,4 @@
-$primary-color: #ffd700;
+
 
 @import 'animate.css';
 @import 'semantic-ui-css/semantic.min.css';
@@ -32,7 +32,6 @@ body {
   font-family:  'Oxygen', sans-serif;
   font-size:  1rem;
   line-height: 1.7;
-  color: #444;
   overflow: hidden;
   display: block;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +40,7 @@ body {
 .page {
  
   background-image:  
-   linear-gradient(to right, #085178af, #85d8ceb0),
+   linear-gradient(to right, var(--color-primary), var(--color-secondary)),
    url('../src/assets/images/sky1920x1280.png');
    background-size: cover;
   
@@ -49,9 +48,8 @@ body {
 }
 :root {
   // COLORS
-  --color-primary: hsla(201, 88%, 25%, 0.686);
-  --color-secondary: hsla(173, 52%, 68%, 0.69);
-
+  --color-primary: hsla(200, 88%, 25%, 0.75);
+  --color-secondary: hsla(173, 52%, 68%, 0.75);
   // .TEXT
   --textColor-primary: #fff;
   --textColor-yellow: #ffd700;
