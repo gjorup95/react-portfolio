@@ -1,10 +1,11 @@
 import './index.scss'
 import AnimateLetters from '../AnimateLetters'
 import { useState, useEffect, useRef } from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import emailjs from '@emailjs/browser'
 import Alerts from '../alerts'
 import IsLoadingHOC from '../customLoader/IsLoadingHOC'
+import { motion } from 'framer-motion'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -13,9 +14,26 @@ const Contact = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 3000)
+    }, 2200)
   }, [])
 
+  const transition = {
+    enter: {
+      scale: 0.75,
+      opacity: 0.25,
+    },
+    animate: {
+      scale: 1,
+      transition: { delay: 0.9, ease: 'easeInOut', duration: 0.3 },
+      opacity: 1,
+    },
+    exit: {
+      opacity: [1, 0.75, 0],
+      scale: [1, 0.75, 0.75],
+      x: [0, 0, 1200],
+      transition: { duration: 0.7, times: [0, 0.3, 0.5] },
+    },
+  }
   const sendEmail = (e) => {
     e.preventDefault()
     //do something else
@@ -42,7 +60,14 @@ const Contact = () => {
   }
 
   return (
-    <>
+    <motion.div
+      layout
+      className="motion"
+      initial="enter"
+      animate="animate"
+      exit="exit"
+      variants={transition}
+    >
       <div className="container contact-page">
         <div className="text-zone">
           <h1>
@@ -85,24 +110,24 @@ const Contact = () => {
             </ul>
           </form>
         </div>
-      </div>
 
-      <div className="map-wrap">
-        <MapContainer
-          center={[56.17547802941453, 10.204873863180014]}
-          zoom={13}
-          dragging={false}
-          doubleClickZoom={false}
-          scrollWheelZoom={false}
-          attributionControl={false}
-          zoomControl={true}
-        >
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
-        </MapContainer>
+        <div className="map-wrap">
+          <MapContainer
+            center={[56.17547802941453, 10.204873863180014]}
+            zoom={13}
+            dragging={false}
+            doubleClickZoom={false}
+            scrollWheelZoom={false}
+            attributionControl={false}
+            zoomControl={true}
+          >
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
+          </MapContainer>
+        </div>
       </div>
       <Alerts formStatus={formStatus} formRef={form} />
-    </>
+    </motion.div>
   )
 }
 

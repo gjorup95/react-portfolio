@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Layout from '../Layout'
 import Home from '../Home'
 import About from '../about'
@@ -10,13 +10,15 @@ const AnimatedRoutes = () => {
   const location = useLocation()
 
   return (
-    <Routes location={location} key={location.pathname}>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-    </Routes>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </AnimatePresence>
   )
 }
 export default AnimatedRoutes

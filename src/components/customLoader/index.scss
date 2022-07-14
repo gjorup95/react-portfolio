@@ -1,27 +1,26 @@
-.spinner{
-    display: block;
+.box{
+    
     position: relative;
-
-    width: 400px;
-    height:100px;
-    top: 50%;
-    left: 40%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
 }
-.spinner-text{
+.spinner{   
+    width: 400px;
+    height:100px;
+}
+.progressBar-text{
     text-align: center;
     margin: auto;
     font-family: var(--font-cursiveHeader);
     margin-bottom: 0.5rem;
     color: var(--textColor-yellow);
+   
 }
-.ui.progress .bar{
-    min-width: 0;
+.progressBar{
     background: linear-gradient(to left, var(--color-secondary), var(--textColor-yellow));
-    border-radius: 0;
-
-}
-.ui.tiny.progress .bar{
     height: 0.5em;
     border-radius: 0.2rem;
 }

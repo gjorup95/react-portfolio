@@ -1,6 +1,11 @@
 
-.contact-form {
+.motion{
+  position: relative;
   width: 100%;
+  height: 100%;
+}
+.contact-form {
+  width: 50%;
   min-width: 100%;
   margin-top: 2rem;
 
@@ -16,11 +21,11 @@
     li {
       
       list-style: none;
-      opacity: 0;
+      opacity: 1;
       overflow: hidden;
       
-      animation: fadeInUp 2s 2s;
-      animation-fill-mode: forwards;
+      //animation: fadeInUp 2s 2s;
+      //animation-fill-mode: forwards;
     }
     li.emne{
     grid-row: 2;
@@ -119,9 +124,9 @@
   width: 100%;
   height: 100%;
   position: relative;
-  opacity: 0  ;
-  animation: backInRight 1s 1.2s;
-  animation-fill-mode: forwards;
+  opacity: 1  ;
+  //animation: backInRight 1s 1.2s;
+  //animation-fill-mode: forwards;
   z-index: 2;
 }
 
