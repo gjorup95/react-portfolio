@@ -2,11 +2,7 @@ import './index.scss'
 import { useState } from 'react'
 import CustomLoader from './index'
 import { motion, AnimatePresence } from 'framer-motion'
-export const IsLoadingHOC = (
-  WrappedComponentPage,
-  WrappedComponentLoader,
-  loadingMessage
-) => {
+export const IsLoadingHOC = (WrappedComponentPage, loadingMessage) => {
   function HOC(props) {
     const [isLoading, setLoading] = useState(true)
     const setLoadingState = (isComponentLoading) => {
@@ -15,7 +11,7 @@ export const IsLoadingHOC = (
 
     return (
       <>
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
           {isLoading && (
             <motion.div
               layout
@@ -36,7 +32,6 @@ export const IsLoadingHOC = (
             </motion.div>
           )}
         </AnimatePresence>
-
         {isLoading === false && <WrappedComponentPage {...props} />}
       </>
     )

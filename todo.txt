@@ -1,4 +1,4 @@
-1. Fix animations
+1. Fix animations DONE
 2. Adjust to flexible layout
 3. Project page
 4. Animationer af transitioner

@@ -2,6 +2,8 @@ import AnimateLetters from '../AnimateLetters'
 import React, { useState, useEffect } from 'react'
 import Spinner from '../spinner'
 import IsLoadingHOC from '../customLoader/IsLoadingHOC'
+import { motion } from 'framer-motion'
+import './index.scss'
 
 const About = (props) => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -11,6 +13,23 @@ const About = (props) => {
     about: 'Om mig',
   }
 
+  const transition = {
+    enter: {
+      scale: 0.75,
+      opacity: 0.25,
+    },
+    animate: {
+      scale: 1,
+      transition: { delay: 0.9, ease: 'easeInOut', duration: 0.3 },
+      opacity: 1,
+    },
+    exit: {
+      opacity: [1, 0.75, 0],
+      scale: [1, 0.75, 0.75],
+      x: [0, 0, 1200],
+      transition: { duration: 0.7, times: [0, 0.3, 0.5] },
+    },
+  }
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
@@ -43,20 +62,28 @@ const About = (props) => {
   }
 
   return (
-    <div className="container about-page">
-      <div className="text-zone">
-        <h1>
-          <AnimateLetters
-            letterClass={letterClass}
-            stringToAnimate={details.about}
-            passedIndex={15}
-          />
-        </h1>
+    <motion.div
+      className="motionAbout"
+      initial="enter"
+      animate="animate"
+      exit="exit"
+      variants={transition}
+    >
+      <div className="container about-page">
+        <div className="text-zone">
+          <h1>
+            <AnimateLetters
+              letterClass={letterClass}
+              stringToAnimate={details.about}
+              passedIndex={15}
+            />
+          </h1>
 
-        {generateParagraphs()}
+          {generateParagraphs()}
+        </div>
+        <Spinner />
       </div>
-      <Spinner />
-    </div>
+    </motion.div>
   )
 }
 
