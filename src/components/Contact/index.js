@@ -87,27 +87,37 @@ const Contact = () => {
           </p>
 
           <form ref={form} onSubmit={sendEmail} className="contact-form">
-            <ul>
-              <li className="half">
-                <input placeholder="Navn" type="text" name="name" required />
-              </li>
-              <li className="half">
-                <input placeholder="Email" type="email" name="email" required />
-              </li>
-              <li className="emne">
-                <input placeholder="Emne" type="text" name="subject" required />
-              </li>
-              <li className="textBox">
-                <textarea
-                  placeholder="Besked..."
-                  name="message"
-                  required
-                ></textarea>
-              </li>
-              <li className="buttonPlacement">
-                <input type="submit" className="flat-button" value="SEND" />
-              </li>
-            </ul>
+            <input
+              className="input-item name"
+              placeholder="Navn"
+              type="text"
+              name="name"
+              required
+            />
+
+            <input
+              className="input-item email"
+              placeholder="Email"
+              type="email"
+              name="email"
+              required
+            />
+
+            <input
+              className="input-item topic"
+              placeholder="Emne"
+              type="text"
+              name="subject"
+              required
+            />
+
+            <textarea
+              className="input-item"
+              placeholder="Besked..."
+              name="message"
+              required
+            ></textarea>
+            <input type="submit" className="flat-button" value="SEND" />
           </form>
         </div>
 
