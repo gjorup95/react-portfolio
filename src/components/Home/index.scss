@@ -40,8 +40,15 @@
       letter-spacing: 0.25rem;
       animation: fadeIn 1s 0.3s backwards;
     }
-  
+    .button-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
     .flat-button {
+      text-align: center;
+      background: none;
+      cursor: pointer;
       color: var(--textColor-yellow);
       font-size: 1rem;
       font-weight: 400;

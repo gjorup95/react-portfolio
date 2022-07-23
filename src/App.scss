@@ -20,16 +20,19 @@
   src: url('./assets/fonts/Oxygen-Regular.ttf');
 }
 
-
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: url('./assets/fonts/Lato-Thin.ttf');
+}
 
 input, 
 textarea {
-  font-family: 'Oxygen', sans-serif;
+  font-family: var(--font-base);
 }
 
 body {
   margin: 0;
-  font-family:  'Oxygen', sans-serif;
+  font-family:  var(--font-base);
   font-size:  1rem;
   line-height: 1.7;
   overflow: hidden;
@@ -54,12 +57,12 @@ body {
   --textColor-light: rgba(255,255,255, 0.6);
   
   // FONTS
+  //--font-primaryHeader: 'Lato-regular', 'sans-serif';
   --font-primaryHeader: 'Bebas Neue', 'cursive';
   --font-cursiveHeader: 'La Belle Aurore', 'cursive';
-  --font-base: 'Oxygen', 'sans-serif';
- 
-  // Sizes 1rem
-  font-size: 16px;
+  //--font-base: 'Oxygen', 'sans-serif';
+  --font-base: 'Lato', 'sans-serif';
+
 
   //Hover
   --hover-background: var(--textColor-yellow);

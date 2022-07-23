@@ -1,6 +1,8 @@
 1. Fix animations DONE
 2. Adjust to flexible layout
 3. Project page
-4. Animationer af transitioner
+4. Animationer af transitioner DONe
 5. center loading screen DONE
 6. Lav scrolling page ->  https://dev.to/codebucks/implement-silky-smooth-scrolling-in-react-js-46fn?fbclid=IwAR3HoHTI24QFWfwIyyeKY5xSlD9CaxLgihCXX1UGpqMNk_HsBLhyG4Mt8NQ
+7. Check if FOUC present in production build.
+8. Upload CV til HOME download CV.

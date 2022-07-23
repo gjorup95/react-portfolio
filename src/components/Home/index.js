@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import AnimateLetters from '../AnimateLetters'
 import React, { useEffect, useState } from 'react'
 
-
-
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const [render, setRender] = useState(false)
@@ -24,12 +22,22 @@ const Home = () => {
   const helper = () => {
     if (render) {
       return (
-        <React.Fragment>
+        <>
           <h2>{user.abilities}</h2>
-          <Link to="/contact" className="flat-button">
-            KONTAKT MIG
-          </Link>
-        </React.Fragment>
+          <div className="button-container">
+            <Link to="/contact" className="flat-button">
+              KONTAKT MIG
+            </Link>
+            <Link
+              to="/robots.txt"
+              target="_blank"
+              className="flat-button"
+              download
+            >
+              HENT CV
+            </Link>
+          </div>
+        </>
       )
     }
   }

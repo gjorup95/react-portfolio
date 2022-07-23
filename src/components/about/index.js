@@ -5,7 +5,7 @@ import IsLoadingHOC from '../customLoader/IsLoadingHOC'
 import { motion } from 'framer-motion'
 import './index.scss'
 
-const About = (props) => {
+const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
   const RENDER_DURATION = 3000
@@ -38,7 +38,7 @@ const About = (props) => {
 
   const generateParagraphs = () => {
     return (
-      <div>
+      <div className="text-block">
         <p>
           Jeg er en ambitiøs fullstack udvikler med en øget interesse for
           webudvikling. Jeg har min baggrund fra Aarhus Universitet, hvor jeg er
