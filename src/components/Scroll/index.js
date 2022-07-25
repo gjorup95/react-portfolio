@@ -10,6 +10,7 @@ import {
   scroller,
 } from 'react-scroll'
 import React from 'react'
+import PortfolioLoadingScreen from '../PortfolioLoadingScreen'
 import Portfolio from '../Portfolio'
 
 class ScrollPage extends React.Component {
@@ -37,7 +38,7 @@ class ScrollPage extends React.Component {
   render() {
     return (
       <>
-        <Portfolio />
+        <PortfolioLoadingScreen />
       </>
     )
   }

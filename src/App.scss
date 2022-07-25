@@ -15,9 +15,10 @@
   font-family: 'Bebas Neue', cursive;
   src: url('./assets/fonts/BebasNeue-Regular.ttf');
 }
-@font-face { 
-  font-family: 'Oxygen', sans-serif;
-  src: url('./assets/fonts/Oxygen-Regular.ttf');
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf');
 }
 
 @font-face {
@@ -52,7 +53,7 @@ body {
   --color-primary: hsla(200, 88%, 25%, 0.75);
   --color-secondary: hsla(173, 52%, 68%, 0.75);
   // .TEXT
-  --textColor-primary: #fff;
+  --textColor-primary: antiquewhite;
   --textColor-yellow: #ffd700;
   --textColor-light: rgba(255,255,255, 0.6);
   
@@ -60,8 +61,9 @@ body {
   //--font-primaryHeader: 'Lato-regular', 'sans-serif';
   --font-primaryHeader: 'Bebas Neue', 'cursive';
   --font-cursiveHeader: 'La Belle Aurore', 'cursive';
-  //--font-base: 'Oxygen', 'sans-serif';
+ 
   --font-base: 'Lato', 'sans-serif';
+  --font-test: 'Montserrat', 'sans-serif';
 
 
   //Hover
@@ -72,11 +74,21 @@ body {
     font-size: 4rem;
     font-family: var(--font-primaryHeader);
     color:  var(--textColor-primary);
+    font-weight: 400;
   }
   h2{
     font-size: 1rem;
-    font-family: var(--font-base);
-    color: var(--textColor-light);
+    font-family: var(--font-primaryHeader);
+    //color: var(--textColor-light);
+    color: #A9A9A9
+    
+    
   }
-
+  
+//  SKY #CAEBF2
+//  CARBON #A9A9A9
+//  NEUTRAL #EFEFEF
+//
+// 
+//
 }

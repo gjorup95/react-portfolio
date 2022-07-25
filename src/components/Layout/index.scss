@@ -59,6 +59,7 @@
         margin-bottom: 2.5rem;
         
         
+        
         &:before {
           content: '<h1>';
           font-family: var(--font-cursiveHeader);
@@ -88,9 +89,11 @@
       p {
         font-size: 1rem;
         color: var(--textColor-primary);
-        font-family: var(--font-base);
+        font-family: var(--font-test);
+        font-weight: lighter;
+        //font-family: var(--font-base);
         max-width: fit-content;
-        opacity: 1;
+        opacity: 0.9;
         animation: fadeIn 2s;
       }
     }

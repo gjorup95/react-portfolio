@@ -73,7 +73,7 @@ const Contact = () => {
           <h1>
             <AnimateLetters
               letterClass={letterClass}
-              stringToAnimate={'Kontakt Mig'}
+              stringToAnimate={'Kontakt'}
               passedIndex={15}
             />
           </h1>
