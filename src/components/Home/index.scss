@@ -1,72 +1,77 @@
 .home-page {
-    .text-zone {
-      position: absolute;
-      left: 10%;
-      top: 35%;
-      width: 55%;
-      max-height: 90%;
-    }
-  
-    h1 {
-      line-height: 3.725rem;
-      margin: 0;
-      
-  
-      &:before {
-        content: '<h1>';
-        font-family: 'La Belle Aurore' , "cursive";
-        color: var(--textColor-yellow);
-        font-size: 1.125rem;;
-        position: absolute;
-        margin-top: -2.5rem;
-        left: -0.9375rem;
-        opacity: 0.8;
-      }
-  
-      &:after {
-        content: '<h1/>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 1.125rem;
-        color: var(--textColor-yellow);
-        position: absolute;
-        margin-top: 1.125rem;
-        margin-left: 1.25rem;
-        opacity: 0.8;
-      }
-    }
-  
-    h2 {
-      margin-top: 1rem;
-      font-weight: 200;
-      letter-spacing: 0.25rem;
-      animation: fadeIn 1s 0.3s backwards;
-    }
-    .button-container{
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: 1.5rem;
-    }
-    .flat-button {
-      text-align: center;
-      background: none;
-      cursor: pointer;
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    width: 55%;
+    max-height: 90%;
+  }
+  .name-header {
+    letter-spacing: 0.2rem;
+  }
+  .position-header {
+    font-size: 5rem;
+  }
+
+  h1 {
+    line-height: 4rem;
+    margin: 0;
+
+    &:before {
+      content: '<h1>';
+      font-family: 'La Belle Aurore', 'cursive';
       color: var(--textColor-yellow);
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.25rem;
-      font-family: "Oxygen", 'sans-serif';
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1px solid #ffd700;
-      margin-top: 0.5rem;
-      float: left;
-      animation: fadeIn 1s 0.6s backwards;
-      white-space: nowrap;
-  
-      &:hover {
-        background: var(--hover-background);
-        color: var(--hover-color)
-      }
+      font-size: 1.125rem;
+      position: absolute;
+      margin-top: -2.5rem;
+      left: -0.9375rem;
+      opacity: 0.8;
+    }
+
+    &:after {
+      content: '<h1/>';
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 1.125rem;
+      color: var(--textColor-yellow);
+      position: absolute;
+      margin-top: 2rem;
+      margin-left: 0.5rem;
+      opacity: 0.8;
+      letter-spacing: 0.1rem;
     }
   }
-  
+
+  h2 {
+    margin-top: 1rem;
+    font-weight: 200;
+    letter-spacing: 0.25rem;
+    animation: fadeIn 1s 0.3s backwards;
+  }
+  .button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .flat-button {
+    text-align: center;
+    background: none;
+    cursor: pointer;
+    color: var(--textColor-yellow);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.25rem;
+    font-family: 'Oxygen', 'sans-serif';
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #ffd700;
+    margin-top: 0.5rem;
+    float: left;
+    animation: fadeIn 1s 0.6s backwards;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--hover-background);
+      color: var(--hover-color);
+    }
+  }
+}

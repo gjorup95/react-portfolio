@@ -1,8 +1,8 @@
 import './index.scss'
 const PortfolioLoadingScreen = () => {
   return (
-    <div className="flex-containerPortfolio">
-      <h1 className="portfolio-headline">Portfolio</h1>
+    <div className="grid-containerPortfolio">
+      <div className="title">Portfolio</div>
       <div className="box-display">
         <ul className="animation-list">
           <li className="item-1">Design Patterns</li>
@@ -13,7 +13,7 @@ const PortfolioLoadingScreen = () => {
           <li className="item-6">Design Patterns</li>
         </ul>
       </div>
-      <div className="scrolling-indicator">HEJ</div>
+      <div className="scrolling-indicator"></div>
     </div>
   )
 }

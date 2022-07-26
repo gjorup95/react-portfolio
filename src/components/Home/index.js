@@ -45,18 +45,20 @@ const Home = () => {
   return (
     <div className="container home-page">
       <div className="text-zone">
-        <h1>
+        <h1 className="name-header">
           <AnimateLetters
             letterClass={letterClass}
             stringToAnimate={user.name}
             passedIndex={0}
           />
           <br />
-          <AnimateLetters
-            letterClass={letterClass}
-            stringToAnimate={user.about}
-            passedIndex={user.name.length}
-          />
+          <span className="position-header">
+            <AnimateLetters
+              letterClass={letterClass}
+              stringToAnimate={user.about}
+              passedIndex={user.name.length}
+            />
+          </span>
         </h1>
         {helper()}
       </div>
