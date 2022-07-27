@@ -10,11 +10,24 @@
     letter-spacing: 0.2rem;
   }
   .position-header {
-    font-size: 5rem;
+    font-size: 6rem;
   }
 
+  .image-container {
+    position: absolute;
+    top: -275px;
+    z-index: -1;
+    right: 0px;
+    right: -500px;
+  }
+  .profile-picture {
+    width: 600px;
+    opacity: 0.85;
+    border-radius: 10%;
+    transform: scaleX(-1);
+  }
   h1 {
-    line-height: 4rem;
+    line-height: 4.25rem;
     margin: 0;
 
     &:before {

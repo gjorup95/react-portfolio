@@ -2,6 +2,7 @@ import './index.scss'
 import { Link } from 'react-router-dom'
 import AnimateLetters from '../AnimateLetters'
 import React, { useEffect, useState } from 'react'
+import profile from '../../assets/images/IMG_0818.jpg'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -61,6 +62,9 @@ const Home = () => {
           </span>
         </h1>
         {helper()}
+        <div className="image-container">
+          <img className="profile-picture" src={profile} alt="Profile" />
+        </div>
       </div>
     </div>
   )

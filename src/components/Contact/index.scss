@@ -1,30 +1,34 @@
-
-.motion{
+.motion {
   position: relative;
   width: 100%;
   height: 100%;
+}
+.paragraph-contact {
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
 }
 .contact-form {
   min-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    column-gap: 0.25rem;
-    row-gap: 0.25rem;
-  .input-item{
+  grid-template-rows: 1fr;
+  column-gap: 0.25rem;
+  row-gap: 0.25rem;
+  .input-item {
+    color: #fff;
     border: 0;
     background: #115173;
     height: 3rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border-radius: 0.3rem;
-    box-shadow:0 0 0.625rem 0.25rem rgba(0,0,0,0.12);
+    box-shadow: 0 0 0.625rem 0.25rem rgba(0, 0, 0, 0.12);
     padding-left: 0.5rem;
   }
-  .topic{
+  .topic {
     grid-row: 2;
     grid-column: 1/3;
   }
- 
+
   textarea {
     grid-row: 3;
     grid-column: 1/3;
@@ -37,12 +41,14 @@
     min-height: 9.735rem;
     resize: none;
     border-radius: 0.3rem;
-    box-shadow:0 0 0.625rem 0.25rem rgba(0,0,0,0.12);
-   
+    box-shadow: 0 0 0.625rem 0.25rem rgba(0, 0, 0, 0.12);
   }
-  *:focus {outline:none !important}
-  input[type='text']:focus, input[type='email']:focus, textarea:focus{
-  
+  *:focus {
+    outline: none !important;
+  }
+  input[type='text']:focus,
+  input[type='email']:focus,
+  textarea:focus {
     border: 0.1rem solid #ffd700;
   }
   .flat-button {
@@ -57,21 +63,19 @@
     border: 0.125rem solid #ffd700;
     float: left;
     border-radius: 0.25rem;
+    font-family: var(--font-base);
     background: 0 0;
     text-transform: uppercase;
     text-align: center;
     float: right;
-    
   }
-  .flat-button:hover{
+  .flat-button:hover {
     background-color: var(--hover-background);
     color: var(--hover-color);
-   
   }
-  .flat-button:active{
+  .flat-button:active {
     transition-delay: 250ms;
     background-color: #198754;
-    
   }
 }
 .map-wrap {
@@ -81,17 +85,14 @@
   margin-bottom: 1rem;
   width: 50%;
   height: 95%;
- 
- }
+}
 
 .leaflet-container {
   width: 100%;
   height: 100%;
   position: relative;
-  opacity: 1  ;
+  opacity: 1;
   //animation: backInRight 1s 1.2s;
   //animation-fill-mode: forwards;
   z-index: 2;
 }
-
-

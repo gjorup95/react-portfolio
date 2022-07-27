@@ -78,7 +78,7 @@ const Contact = () => {
             />
           </h1>
 
-          <p>
+          <p className="paragraph-contact">
             Jeg er interesseret i jobmuligheder der byder på nye udfordringer
             over hele software-stacken. Hvor jeg kan bidrage til udviklingen af
             projekter og opnå nye erfaringer i et team. <br />

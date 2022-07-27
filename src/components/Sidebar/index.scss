@@ -7,6 +7,17 @@
   min-height: 500px;
 }
 
+.logo {
+  display: block;
+  width: 72px;
+  img {
+    margin-top: 1rem;
+    display: block;
+    position: relative;
+    width: inherit;
+    margin-left: 0.5rem;
+  }
+}
 nav {
   display: block;
   text-align: center;
@@ -38,7 +49,8 @@ nav {
     &::after {
       content: '';
       font-size: 0.875rem;
-      font-family: var(--font-primaryHeader);
+      font-family: var(--font-primaryRegular);
+      font-weight: 800;
       letter-spacing: 2px;
       position: absolute;
       bottom: 0;

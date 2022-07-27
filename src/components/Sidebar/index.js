@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './index.scss'
-
+import profileLogo from '../../assets/images/pic-logo511.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHome,
@@ -12,6 +12,9 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 const Sidebar = () => {
   return (
     <div className="nav-bar">
+      <Link className="logo" to="/">
+        <img src={profileLogo} alt="Profile" />
+      </Link>
       <nav>
         <NavLink exact="true" activeclassname="active" to="/">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
