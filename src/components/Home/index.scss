@@ -17,13 +17,12 @@
     position: absolute;
     top: -275px;
     z-index: -1;
-    right: 0px;
-    right: -500px;
+    right: -290px;
   }
   .profile-picture {
     width: 600px;
     opacity: 0.85;
-    border-radius: 10%;
+    border-radius: 5%;
     transform: scaleX(-1);
   }
   h1 {
