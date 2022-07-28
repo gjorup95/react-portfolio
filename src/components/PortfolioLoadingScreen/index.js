@@ -1,19 +1,23 @@
 import './index.scss'
+import ScrollAnimation from '../ScrollAnimation'
 const PortfolioLoadingScreen = () => {
   return (
     <div className="grid-containerPortfolio">
       <div className="title">Portfolio</div>
       <div className="box-display">
         <ul className="animation-list">
-          <li className="item-1">Design Patterns</li>
-          <li className="item-2">Docker</li>
-          <li className="item-3">User Research</li>
-          <li className="item-4">Unit Testing</li>
-          <li className="item-5">Prototyping</li>
-          <li className="item-6">Design Patterns</li>
+          <li>Software Design Patterns</li>
+          <li>Docker</li>
+          <li>User Research</li>
+          <li>Unit Testing</li>
+          <li>Prototyping</li>
+          <li>Express - NodeJS</li>
+          <li>REST API</li>
         </ul>
       </div>
-      <div className="scrolling-indicator"></div>
+      <div className="scrolling-indicator">
+        <ScrollAnimation />
+      </div>
     </div>
   )
 }

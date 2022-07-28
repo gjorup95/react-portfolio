@@ -1,8 +1,12 @@
-1. Fix animations DONE
 2. Adjust to flexible layout
 3. Project page
-4. Animationer af transitioner DONe
-5. center loading screen DONE
 6. Lav scrolling page ->  https://dev.to/codebucks/implement-silky-smooth-scrolling-in-react-js-46fn?fbclid=IwAR3HoHTI24QFWfwIyyeKY5xSlD9CaxLgihCXX1UGpqMNk_HsBLhyG4Mt8NQ
 7. Check if FOUC present in production build.
 8. Upload CV til HOME download CV.
+9 . https://jestjs.io/docs/tutorial-react JEST TESTING
+10. avoidable rerenders https://github.com/welldone-software/why-did-you-render           - https://github.com/welldone-software/why-did-you-render/issues/154#issuecomment-773905769
+11. reusable hooks https://usehooks.com/
+12. lær flexbox + css grid https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/
+13. udkommentér ctrl shift 7
+14. lær GRAPHQL https://graphql.org/learn/1
+15. SASS SCSS ANIMATION https://glennmccomb.com/articles/creating-smooth-sequential-animations-with-sass/

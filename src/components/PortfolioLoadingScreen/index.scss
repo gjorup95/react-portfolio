@@ -5,9 +5,17 @@
   width: 90%;
   height: 100%;
   border-radius: 1rem;
-  animation: fadeInLeft 0.75s;
+  animation: 1.5s fadeIn ease-in 1;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .title {
   margin-top: 6.5rem;
@@ -31,56 +39,69 @@
   letter-spacing: 0.2rem;
   font-family: var(--font-test);
   color: var(--textColor-yellow);
-
   text-transform: uppercase;
 
-  line-height: 1.25;
   overflow: hidden;
 }
 
-$item-count: 6;
+$item-count: 7;
 $item: calc(1 / $item-count);
 
 ul.animation-list {
-  margin: 0;
   padding: 0;
-
-  animation: scrollUp 6s 0.16s infinite forwards;
-  animation-delay: 1s;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  line-height: 0;
+  bottom: 0;
+  position: relative;
+  line-height: 1.5;
 
   li {
     opacity: 1;
-    height: 1.5rem;
-    padding: 1rem;
+    height: 100%;
     list-style: none;
   }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+.animation-list {
+  animation: titleflip 9s ease-in-out 1s infinite;
 }
 
-@keyframes scrollUp {
-  from {
-    transform: translateY(8%);
+@keyframes titleflip {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: translateY((calc(110% / $item-count)) * ($item-count - 1));
+  15% {
+    transform: translateY(-36px);
+  }
+  30% {
+    transform: translateY(-72px);
+  }
+  45% {
+    transform: translateY(-108px);
+  }
+  60% {
+    transform: translateY(-144px);
+  }
+  75% {
+    transform: translateY(-180px);
+  }
+  90% {
+    transform: translateY(-216px);
+  }
+  90%,
+  100% {
+    transform: translateY(0px);
   }
 }
 
 .scrolling-indicator {
   display: flex;
-  margin-top: -6rem;
-  grid-row: 5/6;
+  margin: auto;
+  grid-row: 6;
   grid-column: 2/3;
   height: 5rem;
-  background-color: blanchedalmond;
-  width: 50%;
-  margin-left: 25%;
+
+  align-content: center;
 }
