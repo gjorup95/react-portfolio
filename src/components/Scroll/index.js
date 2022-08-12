@@ -17,6 +17,12 @@ class ScrollPage extends React.Component {
           <section id="part2">
             <Portfolio></Portfolio>
           </section>
+          <section id="part3">
+            <Portfolio></Portfolio>
+          </section>
+          <section id="part4">
+            <Portfolio></Portfolio>
+          </section>
         </ScrollableContainer>
       </>
     )

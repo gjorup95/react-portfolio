@@ -12,3 +12,4 @@
 15. SASS SCSS ANIMATION https://glennmccomb.com/articles/creating-smooth-sequential-animations-with-sass/
 16. dividers https://codepen.io/isabelc/pen/MmrJgx
 17. responsive images https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/
+18. TDD development react https://www.toptal.com/react/tdd-react-user-stories-to-development
