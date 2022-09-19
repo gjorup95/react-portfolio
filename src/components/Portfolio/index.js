@@ -2,7 +2,7 @@ import './index.scss'
 const portfolio = () => {
   return (
     <div className="grid-container-portfolio">
-      <h1 className="title">Project</h1>
+      <h1 className="title-unique">UNDER CONSTRUCTION!</h1>
       <div className="grid-item flex-container">
         <img
           className="flex-item left-image"
@@ -37,7 +37,7 @@ const portfolio = () => {
         afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus
         PageMaker, som også indeholdt en udgave af Lorem Ipsum.
       </div>
-      <div className="grid-item navbar-bottom">Hello</div>
+      <div className="grid-item navbar-bottom">NAVBAR</div>
     </div>
   )
 }
