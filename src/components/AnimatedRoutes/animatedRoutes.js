@@ -13,11 +13,11 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="portfolio" element={<ScrollPage />} />
-          <Route path="contact" element={<Contact />} />
+        <Route path="/react-portfolio" element={<Layout />}>
+          <Route path="/react-portfolio" index element={<Home />} />
+          <Route path="/react-portfolio/about" element={<About />} />
+          <Route path="/react-portfolio/portfolio" element={<ScrollPage />} />
+          <Route path="/react-portfolio/contact" element={<Contact />} />
         </Route>
       </Routes>
     </AnimatePresence>

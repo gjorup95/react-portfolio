@@ -25,7 +25,7 @@ const Home = () => {
         <>
           <h2>{user.abilities}</h2>
           <div className="button-container">
-            <Link to="/contact" className="flat-button">
+            <Link to="/react-portfolio/contact" className="flat-button">
               KONTAKT MIG
             </Link>
             <Link
