@@ -1,7 +1,6 @@
 {
   "name": "react-portpolio",
   "version": "0.1.0",
-  "homepage": "https://gjorup95.github.io/react-portfolio",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -38,8 +37,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
