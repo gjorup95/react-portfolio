@@ -28,14 +28,15 @@ const Home = () => {
             <Link to="/react-portfolio/contact" className="flat-button">
               KONTAKT MIG
             </Link>
-            <Link
-              to="/robots.txt"
-              target="_blank"
-              className="flat-button"
+            <a
+              href="https://drive.google.com/file/d/1-CQXSsjW_gzq6b3GGp0xWTYKImB9YWHX/view?usp=sharing"
               download
+              target="_blank"
+              rel="noreferrer"
+              className="flat-button"
             >
               HENT CV
-            </Link>
+            </a>
           </div>
         </>
       )
