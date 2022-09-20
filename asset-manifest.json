@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.9dde4675.css",
-    "main.js": "/react-portfolio/static/js/main.044de474.js",
+    "main.js": "/react-portfolio/static/js/main.ff280e36.js",
     "static/js/787.d711af96.chunk.js": "/react-portfolio/static/js/787.d711af96.chunk.js",
     "static/media/sky1920x1280.png": "/react-portfolio/static/media/sky1920x1280.413ee38e0311d088b405.png",
     "static/media/Montserrat-VariableFont_wght.ttf": "/react-portfolio/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
@@ -14,11 +14,11 @@
     "static/media/LaBelleAurore.woff2": "/react-portfolio/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
     "index.html": "/react-portfolio/index.html",
     "main.9dde4675.css.map": "/react-portfolio/static/css/main.9dde4675.css.map",
-    "main.044de474.js.map": "/react-portfolio/static/js/main.044de474.js.map",
+    "main.ff280e36.js.map": "/react-portfolio/static/js/main.ff280e36.js.map",
     "787.d711af96.chunk.js.map": "/react-portfolio/static/js/787.d711af96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9dde4675.css",
-    "static/js/main.044de474.js"
+    "static/js/main.ff280e36.js"
   ]
 }
