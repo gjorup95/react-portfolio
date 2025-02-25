@@ -9,7 +9,7 @@ const Home = () => {
   const user = {
     name: 'Troels Gjørup',
     about: 'Fullstack Developer.',
-    abilities: 'Front- & Backend / Javascript / Java',
+    abilities: 'Frontend & Backend | Java & Spring | C# & .NET | Angular & ReactJS'
   }
 
   useEffect(() => {
@@ -67,5 +67,4 @@ const Home = () => {
     </div>
   )
 }
-// TODO: Insert image of person
 export default Home

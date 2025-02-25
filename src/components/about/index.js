@@ -41,20 +41,18 @@ const About = () => {
       <div className="text-block">
         <p>
           Jeg er en ambitiøs fullstack udvikler med en øget interesse for
-          webudvikling. Jeg har min baggrund fra Aarhus Universitet, hvor jeg er
-          kandidat studerende i IT-Produktudvikling. Jeg søger i øjeblikket et
-          job i IT-branchen med ønsket om at opnå nye erfaringer og styrke mine
-          egne faglige kompetencer som udvikler.
+          webudvikling og har min baggrund fra Aarhus Universitet, hvor jeg er
+          kandidat i IT-Produktudvikling.
         </p>
         <p>
-          Jeg er selvstændig hvad angår min egen udvikling, og interesserer mig
-          naturligt for at lære nye teknologier. Hvor jeg pt. er ved at
-          integrere TypeScript i min personlige værktøjskasse.
+          Jeg har en stor interesse for min egen udvikling, og interesserer mig
+          naturligt for at lære nye teknologier. Hvor jeg pt. er ved at udvikle mine kompetencer indenfor
+          ASP.NET Core samt Angular for at styrke min værktøjskasse indenfor webudvikling.
         </p>
         <p>
-          Som person er jeg udadvendt med en stor interesse for engagementet med
+          På det personlige plan er jeg en udadvendt med en stor interesse for engagementet med
           end-users og jeg trives bedst i fællesskaber med muligheder for
-          samarbejde og sparring. I min fritid nyder jeg at holde mig fysisk
+          samarbejde, løsningsparathed og sparring. I min fritid nyder jeg at holde mig fysisk
           aktiv ved at dyrke diverse sportsgrene og pleje mit konkurrencegen.
         </p>
       </div>

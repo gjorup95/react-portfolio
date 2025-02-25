@@ -5,7 +5,7 @@ import ScrollableContainer from '../ScrollableContainer'
 import React from 'react'
 import PortfolioLoadingScreen from '../PortfolioLoadingScreen'
 import Portfolio from '../Portfolio'
-import PageDivider from '../pageDivider'
+
 
 class ScrollPage extends React.Component {
   render() {
@@ -13,22 +13,18 @@ class ScrollPage extends React.Component {
       <>
         <ScrollableContainer>
           <section id="part1">
-            <PortfolioLoadingScreen></PortfolioLoadingScreen>
+            <PortfolioLoadingScreen />
           </section>
-          <section id="part2">
-            <Portfolio></Portfolio>
-            <PageDivider />
-          </section>
-          <section id="part3">
-            <Portfolio></Portfolio>
-            <PageDivider />
-          </section>
-          <section id="part4">
-            <Portfolio></Portfolio>
-          </section>
+          <Portfolio imageSrc="https://placehold.co/600x400"
+                     contributions={[
+                       "Implemented responsive UI",
+                       "Optimized backend performance",
+                       "Integrated third-party APIs",
+                     ]}></Portfolio>
+
         </ScrollableContainer>
       </>
-    )
+    );
   }
 }
 export default ScrollPage
