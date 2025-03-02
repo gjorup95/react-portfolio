@@ -5,10 +5,13 @@ import ScrollableContainer from '../ScrollableContainer'
 import React from 'react'
 import PortfolioLoadingScreen from '../PortfolioLoadingScreen'
 import Portfolio from '../Portfolio'
-import { faBootstrap, faJava, faJs } from '@fortawesome/free-brands-svg-icons'
+import { faBootstrap, faJava, faJs, faReact } from '@fortawesome/free-brands-svg-icons'
 import { faAngular } from '@fortawesome/free-brands-svg-icons/faAngular'
-import { faMicrosoft } from '@fortawesome/free-brands-svg-icons/faMicrosoft'
-
+import mitDKImage from '../../assets/images/MitDK.png'
+import logoKeycloak from '../../assets/images/svg/Logo_of_Keycloak.svg'
+import mySqlLogo from '../../assets/images/svg/mysqlLogo.svg'
+import { logoAspNet } from '../../utils/FontAwesomeIcons'
+import sentryLogo from '../../assets/images/svg/springLogo.svg'
 
 class ScrollPage extends React.Component {
   render() {
@@ -23,7 +26,7 @@ class ScrollPage extends React.Component {
                        "Implemented responsive UI",
                        "Optimized backend performance",
                        "Integrated third-party APIs",
-                     ]} projectTitle={"Producentansvarsregisteret"} year={"2024 – Present"} technologies={[faAngular, faMicrosoft, faJs ]}>
+                     ]} projectTitle={"Producentansvarsregisteret"} year={"2024 – Present"} technologies={[faAngular, logoAspNet, logoKeycloak ]}>
           </Portfolio>
 
           <Portfolio imageSrc="https://placehold.co/600x400"
@@ -31,15 +34,15 @@ class ScrollPage extends React.Component {
                        "Implemented responsive UI",
                        "Optimized backend performance",
                        "Integrated third-party APIs",
-                     ]} projectTitle={"Digital tinglysning"} year={"2023 – 2024"} technologies={[faJava, faAngular, faBootstrap]}>>
+                     ]} projectTitle={"Digital tinglysning"} year={"2023 – 2024"} technologies={[faJava, faAngular, mySqlLogo]}>>
           </Portfolio>
 
-          <Portfolio imageSrc="https://placehold.co/600x400"
-                     contributions={[
+          <Portfolio imageSrc={mitDKImage}
+          contributions={[
                        "Implemented responsive UI",
                        "Optimized backend performance",
                        "Integrated third-party APIs",
-                     ]} projectTitle={"MitDK"} year={"2023 – 2023"} technologies={[faJava, faAngular, faBootstrap]}>>
+                     ]} projectTitle={"MitDK"} year={"2023 – 2023"} technologies={[faJava, faReact, sentryLogo]}>>
           </Portfolio>
 
         </ScrollableContainer>

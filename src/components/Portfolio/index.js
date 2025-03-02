@@ -9,7 +9,7 @@ const Portfolio = ({ imageSrc, contributions, projectTitle, year, technologies }
           <h2 className="subtitle-year">{year}</h2>
         </div>
         <div className="image-container">
-          <img src={imageSrc} alt="Project" />
+          <img src={imageSrc} className="rounded-image" alt="Project" />
         </div>
 
 
@@ -22,10 +22,26 @@ const Portfolio = ({ imageSrc, contributions, projectTitle, year, technologies }
 
         <h2 className="override-h2">Technologies</h2>
         <div className="technology-container">
-          {technologies?.map((item, index) => (
-            <FontAwesomeIcon icon={item} size={'8x'} style={{ gridColumn: `${(index % 3) + 1} / span 1` }}
-                             color={'#ffd700'} alt={`technologies ${index}`} key={index} />
-          ))}
+          {technologies?.map((item, index) => {
+            if (item && typeof item === 'string') {
+            return (
+              <img key={index} src={item} alt={`Technology ${index}`} width="160"
+                   height="160" />
+            )
+            }
+            return (
+              <FontAwesomeIcon
+                  icon={item}
+                  size="8x"
+                  style={{ gridColumn: `${(index % 3) + 1} / span 1` }}
+                  color="#ffd700"
+                  alt={`technologies ${index}`}
+                  key={index}
+                />
+              );
+          })
+          }
+
         </div>
       </div>
     </div>
