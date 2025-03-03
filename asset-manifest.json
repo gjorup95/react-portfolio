@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.9dde4675.css",
-    "main.js": "/react-portfolio/static/js/main.ff280e36.js",
+    "main.css": "/react-portfolio/static/css/main.bfbacd15.css",
+    "main.js": "/react-portfolio/static/js/main.98339d27.js",
     "static/js/787.d711af96.chunk.js": "/react-portfolio/static/js/787.d711af96.chunk.js",
     "static/media/sky1920x1280.png": "/react-portfolio/static/media/sky1920x1280.413ee38e0311d088b405.png",
     "static/media/Montserrat-VariableFont_wght.ttf": "/react-portfolio/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
@@ -9,16 +9,22 @@
     "static/media/Bebas Neue Pro Bold.otf": "/react-portfolio/static/media/Bebas Neue Pro Bold.7922ce4fae889747f968.otf",
     "static/media/Bebas Neue Pro Light.otf": "/react-portfolio/static/media/Bebas Neue Pro Light.5b99f65c9a0ed199540e.otf",
     "static/media/Bebas Neue Pro Regular.otf": "/react-portfolio/static/media/Bebas Neue Pro Regular.3d7bd366b716cd7e6929.otf",
+    "static/media/MitDK.png": "/react-portfolio/static/media/MitDK.584dada810029f074288.png",
     "static/media/Lato-Thin.ttf": "/react-portfolio/static/media/Lato-Thin.5a60dde25d817751d590.ttf",
+    "static/media/DigitalTinglysningNew.png": "/react-portfolio/static/media/DigitalTinglysningNew.b2056a8d6e15d73328a2.png",
+    "static/media/Par2.png": "/react-portfolio/static/media/Par2.456f917d01be54cca5df.png",
     "static/media/LaBelleAurore.woff": "/react-portfolio/static/media/LaBelleAurore.9c5433c64baa43d1d274.woff",
     "static/media/LaBelleAurore.woff2": "/react-portfolio/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/Logo_of_Keycloak.svg": "/react-portfolio/static/media/Logo_of_Keycloak.1dfe5016aad1f253fc603e1911a042c7.svg",
+    "static/media/springLogo.svg": "/react-portfolio/static/media/springLogo.c8083ed559a3c977d66ac9fdbc9a412e.svg",
+    "static/media/mysqlLogo.svg": "/react-portfolio/static/media/mysqlLogo.572b4b12340b14c1aa5898e7a76b2ac5.svg",
     "index.html": "/react-portfolio/index.html",
-    "main.9dde4675.css.map": "/react-portfolio/static/css/main.9dde4675.css.map",
-    "main.ff280e36.js.map": "/react-portfolio/static/js/main.ff280e36.js.map",
+    "main.bfbacd15.css.map": "/react-portfolio/static/css/main.bfbacd15.css.map",
+    "main.98339d27.js.map": "/react-portfolio/static/js/main.98339d27.js.map",
     "787.d711af96.chunk.js.map": "/react-portfolio/static/js/787.d711af96.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dde4675.css",
-    "static/js/main.ff280e36.js"
+    "static/css/main.bfbacd15.css",
+    "static/js/main.98339d27.js"
   ]
 }
