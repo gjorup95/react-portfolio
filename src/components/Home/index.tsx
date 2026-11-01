@@ -8,7 +8,7 @@ import { projects, tools } from '../../data/projects'
 import { reviews } from '../../data/reviews'
 
 const NAME = 'Troels Berthel Gjørup'
-const ROLES = ['Problem solver', 'Tinkerer', 'Requirement solver']
+const ROLES = ['Problem solver', 'Tinkerer', 'Requirement churner']
 
 const Home = () => {
   return (
