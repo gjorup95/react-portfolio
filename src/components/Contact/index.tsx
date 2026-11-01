@@ -41,8 +41,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container split-page contact-page">
-        <div className="text-zone split-page__main">
+      <div className="page-column contact-page">
+        <div className="text-zone">
           <h1>
             <AnimateLetters text="Kontakt" />
           </h1>

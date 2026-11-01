@@ -1,19 +1,8 @@
-.about-cube {
-  grid-column: 2;
-  /* Without this, auto-placement puts the cube in the empty cell beside the text. */
-  grid-row: 2;
-  justify-self: center;
+.about-page {
+  --column: 44rem;
 }
 
 .text-block p {
   font-size: 1.0625rem;
   line-height: 1.75;
-}
-
-@media (max-width: 900px) {
-  .about-cube {
-    grid-column: 1;
-    grid-row: auto;
-    justify-self: stretch;
-  }
 }

@@ -1,5 +1,9 @@
-.contact-page .text-zone > * {
-  max-width: 34rem;
+.contact-page {
+  --column: 34rem;
+}
+
+.paragraph-contact {
+  text-align: center;
 }
 
 .contact-form {

@@ -8,8 +8,9 @@ import {
   domAnimation,
   m,
 } from 'framer-motion'
-import Sidebar from '../Sidebar'
+import Header from '../Header'
 import TopProgress from '../TopProgress'
+import { pageKey } from '../../utils/pageKey'
 
 // Same curve as --ease-out in App.scss, so CSS and JS motion feel identical.
 const EASE_OUT = [0.22, 1, 0.36, 1] as const
@@ -33,9 +34,6 @@ const PageReady = ({
   return null
 }
 
-// GitHub Pages serves "/react-portfolio/" but links point to "/react-portfolio".
-const pageKey = (pathname: string) => pathname.replace(/\/+$/, '') || '/'
-
 const Layout = () => {
   const location = useLocation()
   const page = pageKey(location.pathname)
@@ -48,7 +46,7 @@ const Layout = () => {
       <MotionConfig reducedMotion="user">
         <TopProgress active={loading} />
         <div className="App">
-          <Sidebar />
+          <Header />
           <main className="page" ref={pageRef}>
             <AnimatePresence
               mode="wait"

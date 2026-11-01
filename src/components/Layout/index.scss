@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-columns: var(--rail) 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
   height: 100vh;
   height: 100dvh;
 }
@@ -11,7 +11,12 @@
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
-  background: var(--tint);
+  /* Faint dot grid for a blueprint feel; "local" lets it scroll with the content. */
+  background-color: var(--tint);
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: local;
+  scroll-behavior: smooth;
 }
 
 .page-transition {
@@ -20,79 +25,24 @@
   flex-direction: column;
 }
 
-.container {
-  flex: 1 0 auto;
-  padding: clamp(2rem, 6vh, 4rem) var(--gutter);
-}
-
-.split-page {
-  --split: 62%;
-
-  display: grid;
-  grid-template-columns: var(--split) 1fr;
-  align-content: center;
-  row-gap: clamp(2.5rem, 6vh, 4rem);
-  /* Side padding would shift the grid columns away from the colour split. */
-  padding-inline: 0;
-  background: linear-gradient(
-    to right,
-    var(--tint) var(--split),
-    var(--primary) var(--split)
-  );
-}
-
-.split-page__main {
-  grid-column: 1;
-  padding-left: var(--gutter);
-  padding-right: clamp(1.5rem, 4vw, 4rem);
-}
-
-.split-page__follow {
-  animation: riseIn var(--dur-enter) var(--ease-out) 0.35s both;
+/* Centred single column shared by the About and Contact pages. */
+.page-column {
+  width: min(var(--column, 44rem), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  padding-block: clamp(3rem, 8vh, 5rem);
 }
 
 .text-zone {
-  max-width: 34rem;
-
   h1 {
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   p {
     color: var(--text-muted);
-    max-width: 62ch;
-  }
-
-  /* The split's padding would eat into a max-width here; limits live on the children. */
-  .split-page & {
-    max-width: none;
   }
 
   > :not(h1) {
     animation: riseIn var(--dur-enter) var(--ease-out) 0.25s both;
-  }
-}
-
-@media (max-width: 900px) {
-  .split-page {
-    grid-template-columns: minmax(0, 1fr);
-    padding-inline: var(--gutter);
-    background: var(--tint);
-  }
-
-  .split-page__main {
-    padding-inline: 0;
-  }
-
-  .split-page__follow {
-    grid-column: 1;
-    margin-inline: 0;
-    box-shadow: 0 0 0 100vmax var(--primary);
-    clip-path: inset(-2rem -100vmax);
-  }
-
-  .App {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto 1fr;
   }
 }
