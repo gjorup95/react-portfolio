@@ -1,0 +1,45 @@
+.stage-cube-cont {
+  display: grid;
+  place-items: center;
+  min-height: 17rem;
+  perspective: 1200px;
+  animation: riseIn var(--dur-enter) var(--ease-out) 0.35s both;
+}
+
+.cubespinner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: spincube 16s ease-in-out 1s infinite;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0;
+
+  div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    color: var(--primary);
+    background: var(--surface);
+    border: 12px solid var(--primary);
+    box-sizing: border-box;
+  }
+
+  .face1 { transform: translateZ(100px); }
+  .face2 { transform: rotateY(90deg) translateZ(100px); }
+  .face3 { transform: rotateY(180deg) translateZ(100px); }
+  .face4 { transform: rotateY(270deg) translateZ(100px); }
+  .face5 { transform: rotateX(90deg) translateZ(100px); }
+  .face6 { transform: rotateX(-90deg) translateZ(100px); }
+}
+
+@keyframes spincube {
+  16% { transform: rotateY(-90deg); }
+  33% { transform: rotateY(-180deg); }
+  50% { transform: rotateY(-270deg); }
+  66% { transform: rotateX(-90deg); }
+  83% { transform: rotateX(90deg) rotateY(360deg); }
+}

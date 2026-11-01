@@ -1,0 +1,55 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-height);
+  padding-inline: var(--gutter);
+  z-index: 3;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1.25rem, 4vw, 3rem);
+
+  a {
+    position: relative;
+    padding-block: 0.375rem;
+    /* Same style as the project cards' section labels, at a larger size. */
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--dur-fast);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 -2px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--highlight);
+      transform: scaleX(0);
+      transition: transform 0.2s var(--ease-out);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &.active {
+      font-weight: 800;
+    }
+
+    &.active::after {
+      transform: scaleX(1);
+    }
+
+    &:focus-visible {
+      outline-offset: 4px;
+    }
+  }
+}

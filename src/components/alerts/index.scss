@@ -1,5 +1,6 @@
 .Toastify__toast {
-    background-color: #fff ;
-    font-size: 16px;
-    font-family: 'Helvetica Neue';
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  border: 1px solid var(--border);
 }

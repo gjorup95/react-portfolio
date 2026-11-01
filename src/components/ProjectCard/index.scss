@@ -1,0 +1,124 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  /* No outline (overrides the panel's 1px border). */
+  border: 0;
+}
+
+/*
+ * Every screenshot sits on the same tinted backdrop, centred with even padding,
+ * so images of different shapes look deliberate rather than unevenly cropped.
+ * Spans the card's content width, below the title and year.
+ */
+.project-card__media {
+  --inset: clamp(0.75rem, 2vw, 1.25rem);
+
+  position: relative;
+  align-self: stretch;
+  justify-self: stretch;
+  aspect-ratio: 16 / 11;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--tint);
+}
+
+/* Shown at its own shape, never larger than its 600px source, so it stays sharp. */
+.project-card__image {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: min(100% - 2 * var(--inset), 600px);
+  max-height: calc(100% - 2 * var(--inset));
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  background: var(--bg);
+  box-shadow: 0 6px 18px -8px rgb(6 45 54 / 0.35);
+}
+
+/* Rows come from the parent (see .projects__item), so matching parts line up across cards. */
+@media (min-width: 901px) {
+  .project-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    justify-items: start;
+    align-content: start;
+  }
+}
+
+.project-card__title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 0.95;
+  color: var(--primary);
+}
+
+.year-chip {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.25rem;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.project-card__label {
+  margin: 1.75rem 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.project-card__list {
+  margin: 0;
+  padding-left: 1.25rem;
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+
+    &::marker {
+      color: var(--primary);
+    }
+  }
+}
+
+.technology-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  img,
+  .technology-icon {
+    height: 3.5rem;
+    padding: 0.625rem;
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    background: var(--bg);
+    object-fit: contain;
+    color: var(--primary);
+    box-sizing: border-box;
+  }
+
+  .technology-icon {
+    width: 3.5rem;
+  }
+
+  /* Image logos may be wide wordmarks, so let the tile widen. */
+  img {
+    width: auto;
+    min-width: 3.5rem;
+    max-width: 9rem;
+  }
+}
