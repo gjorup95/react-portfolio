@@ -1,11 +1,14 @@
 import './index.scss'
-import { useState } from 'react'
+import { useState, type ComponentType } from 'react'
 import CustomLoader from './index'
 import { motion, AnimatePresence } from 'framer-motion'
-export const IsLoadingHOC = (WrappedComponentPage, loadingMessage) => {
-  function HOC(props) {
+export const IsLoadingHOC = <P extends object>(
+  WrappedComponentPage: ComponentType<P>,
+  loadingMessage: string
+) => {
+  function HOC(props: P) {
     const [isLoading, setLoading] = useState(true)
-    const setLoadingState = (isComponentLoading) => {
+    const setLoadingState = (isComponentLoading: boolean) => {
       setLoading(isComponentLoading)
     }
 

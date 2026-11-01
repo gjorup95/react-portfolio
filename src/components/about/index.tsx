@@ -1,8 +1,8 @@
 import AnimateLetters from '../AnimateLetters'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Spinner from '../spinner'
 import IsLoadingHOC from '../customLoader/IsLoadingHOC'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import './index.scss'
 
 const About = () => {
@@ -13,7 +13,7 @@ const About = () => {
     about: 'Om mig',
   }
 
-  const transition = {
+  const transition: Variants = {
     enter: {
       scale: 0.75,
       opacity: 0.25,

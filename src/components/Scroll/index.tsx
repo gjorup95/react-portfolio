@@ -2,7 +2,7 @@ import './index.scss'
 
 import ScrollableContainer from '../ScrollableContainer'
 
-import React from 'react'
+import { Component } from 'react'
 import PortfolioLoadingScreen from '../PortfolioLoadingScreen'
 import Portfolio from '../Portfolio'
 import {faJava, faReact } from '@fortawesome/free-brands-svg-icons'
@@ -15,7 +15,7 @@ import sentryLogo from '../../assets/images/svg/springLogo.svg'
 import digitalTinglysningImage from '../../assets/images/DigitalTinglysningNew.png'
 import par2Image from '../../assets/images/par2.png'
 
-class ScrollPage extends React.Component {
+class ScrollPage extends Component {
   render() {
     return (
       <>

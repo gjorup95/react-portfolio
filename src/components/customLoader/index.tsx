@@ -3,20 +3,28 @@ import { useState, useEffect, useRef } from 'react'
 import './index.scss'
 import ProgressBar from './ProgressBar'
 
-const normalize = (value, min, max) => (value - min) / (max - min)
+const normalize = (value: number, min: number, max: number) => (value - min) / (max - min)
 
-const easeInCirc = (x) => {
+const easeInCirc = (x: number) => {
   x = normalize(x, 0, 100)
   return 1 - Math.sqrt(1 - Math.pow(x, 2))
 }
 
-const NewCustomLoader = ({ message = 'Loading...', setLoading }) => {
+type CustomLoaderProps = {
+  message?: string
+  setLoading: (isLoading: boolean) => void
+}
+
+const NewCustomLoader = ({
+  message = 'Loading...',
+  setLoading,
+}: CustomLoaderProps) => {
   const [loader, setLoader] = useState(0)
   const setLoadingRef = useRef(setLoading)
 
   useEffect(() => {
     let loadNum = 0
-    let intervalId = null
+    let intervalId: ReturnType<typeof setInterval> | undefined
 
     const doneTimeout = setTimeout(() => {
       setLoadingRef.current(false)

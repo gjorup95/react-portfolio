@@ -1,6 +1,6 @@
 import './index.scss'
 import AnimateLetters from '../AnimateLetters'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, type FormEvent } from 'react'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -8,13 +8,13 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png'
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 import emailjs from '@emailjs/browser'
-import Alerts from '../alerts'
+import Alerts, { type FormStatus } from '../alerts'
 import IsLoadingHOC from '../customLoader/IsLoadingHOC'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 
 // Bundlers rename/inline Leaflet's default marker images, which breaks its
 // automatic icon-path detection, so point it at the imported assets.
-delete L.Icon.Default.prototype._getIconUrl
+delete (L.Icon.Default.prototype as { _getIconUrl?: unknown })._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: markerIcon,
   iconRetinaUrl: markerIcon2x,
@@ -23,15 +23,15 @@ L.Icon.Default.mergeOptions({
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const [formStatus, setFormStatus] = useState('')
-  const form = useRef()
+  const [formStatus, setFormStatus] = useState<FormStatus>('')
+  const form = useRef<HTMLFormElement>(null)
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 2200)
   }, [])
 
-  const transition = {
+  const transition: Variants = {
     enter: {
       scale: 0.75,
       opacity: 0.25,
@@ -48,7 +48,7 @@ const Contact = () => {
       transition: { duration: 0.7, times: [0, 0.3, 0.5] },
     },
   }
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     //do something else
     setFormStatus('pending')
@@ -56,7 +56,7 @@ const Contact = () => {
       .sendForm(
         'service_cgyic9n',
         'template_1iziy8v',
-        form.current,
+        e.currentTarget,
         '6IgMgQazJPFAvg2zj'
       )
       .then(

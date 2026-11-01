@@ -2,9 +2,18 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 
 import './index.scss'
-import { useEffect, useRef } from 'react'
-const Alerts = (props) => {
-  const toastId = useRef(null)
+import { useEffect, useRef, type RefObject } from 'react'
+import type { Id } from 'react-toastify'
+
+export type FormStatus = '' | 'pending' | 'error' | 'done'
+
+type AlertsProps = {
+  formStatus: FormStatus
+  formRef: RefObject<HTMLFormElement | null>
+}
+
+const Alerts = (props: AlertsProps) => {
+  const toastId = useRef<Id | null>(null)
   const validateToast = () => {
     if (props.formStatus === '') return
     else if (props.formStatus === 'pending') {
@@ -13,7 +22,8 @@ const Alerts = (props) => {
       return
     } else if (props.formStatus === 'done') {
       console.log('done')
-      props.formRef.current.reset()
+      props.formRef.current?.reset()
+      if (toastId.current === null) return
       toast.update(toastId.current, {
         render: 'Gennemført',
         type: 'success',

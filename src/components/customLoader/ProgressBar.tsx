@@ -1,9 +1,12 @@
-import React from 'react'
+import type { CSSProperties } from 'react'
 
-const ProgressBar = (props) => {
-  const { completed, message } = props
+type ProgressBarProps = {
+  completed: number
+  message: string
+}
 
-  const fillerStyles = {
+const ProgressBar = ({ completed, message }: ProgressBarProps) => {
+  const fillerStyles: CSSProperties = {
     width: `${completed}%`,
     textAlign: 'center',
   }

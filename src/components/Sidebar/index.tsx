@@ -16,28 +16,22 @@ const Sidebar = () => {
         <img src={profileLogo} alt="Profile" />
       </Link>
       <nav className="sidebar">
-        <NavLink exact="true" activeclassname="active" to="/react-portfolio">
+        <NavLink to="/react-portfolio">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
         <NavLink
-          exact="true"
-          activeclassname="active"
           className="about-link"
           to="/react-portfolio/about"
         >
           <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
         <NavLink
-          exact="true"
-          activeclassname="active"
           className="contact-link"
           to="/react-portfolio/contact"
         >
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
         <NavLink
-          exact="true"
-          activeclassname="active"
           className="portfolio-link"
           to="/react-portfolio/portfolio"
         >

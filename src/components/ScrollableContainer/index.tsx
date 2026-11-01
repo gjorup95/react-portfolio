@@ -1,11 +1,17 @@
-import React from 'react'
+import { Component, createRef, type ReactNode } from 'react'
 import SweetScroll from 'sweet-scroll'
 import './index.scss'
-class ScrollableContainer extends React.Component {
-  container = React.createRef()
-  scroller = null
+
+type ScrollableContainerProps = {
+  children?: ReactNode
+}
+
+class ScrollableContainer extends Component<ScrollableContainerProps> {
+  container = createRef<HTMLDivElement>()
+  scroller: SweetScroll | null = null
 
   componentDidMount() {
+    if (!this.container.current) return
     this.scroller = SweetScroll.create(
       {
         trigger: "a[href^='#']",
@@ -15,7 +21,7 @@ class ScrollableContainer extends React.Component {
   }
 
   componentWillUnmount() {
-    this.scroller.destroy()
+    this.scroller?.destroy()
   }
 
   render() {

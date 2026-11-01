@@ -1,6 +1,16 @@
 import './index.scss'
-const AnimateLetters = ({ letterClass, stringToAnimate, passedIndex }) => {
-  const stripStringHelper = (string) => {
+type AnimateLettersProps = {
+  letterClass: string
+  stringToAnimate: string
+  passedIndex: number
+}
+
+const AnimateLetters = ({
+  letterClass,
+  stringToAnimate,
+  passedIndex,
+}: AnimateLettersProps) => {
+  const stripStringHelper = (string: string) => {
     return string.split('')
   }
   return (
