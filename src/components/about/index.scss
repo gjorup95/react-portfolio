@@ -1,7 +1,6 @@
-/* Staggered: the cube steps down into the teal panel, below the text. */
 .about-cube {
   grid-column: 2;
-  /* Pin to the second row; otherwise the grid fills the empty cell beside the text. */
+  /* Without this, auto-placement puts the cube in the empty cell beside the text. */
   grid-row: 2;
   justify-self: center;
 }

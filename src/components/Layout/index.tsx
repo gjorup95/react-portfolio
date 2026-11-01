@@ -14,20 +14,14 @@ import TopProgress from '../TopProgress'
 // Same curve as --ease-out in App.scss, so CSS and JS motion feel identical.
 const EASE_OUT = [0.22, 1, 0.36, 1] as const
 
-/**
- * Keeps rendering the outlet it was mounted with, so a page that is fading out
- * keeps showing its own content instead of switching to the incoming page.
- */
+// Without freezing, the exiting page would render the incoming route during its fade-out.
 const FrozenOutlet = () => {
   const outlet = useOutlet()
   const [frozen] = useState(outlet)
   return frozen
 }
 
-/**
- * Rendered next to the page inside the Suspense boundary, so its effect only
- * runs once the page's code has loaded and the page has actually mounted.
- */
+// Inside the Suspense boundary, so its effect runs only once the lazy page has mounted.
 const PageReady = ({
   path,
   onReady,
@@ -39,23 +33,17 @@ const PageReady = ({
   return null
 }
 
-/**
- * "/react-portfolio" and "/react-portfolio/" are the same page; treat them as
- * one so following a link to the page you're already on doesn't replay the
- * page transition.
- */
+// GitHub Pages serves "/react-portfolio/" but links point to "/react-portfolio".
 const pageKey = (pathname: string) => pathname.replace(/\/+$/, '') || '/'
 
 const Layout = () => {
   const location = useLocation()
   const page = pageKey(location.pathname)
   const pageRef = useRef<HTMLElement>(null)
-  // The path whose page is mounted and ready; anything else means "loading".
   const [readyPath, setReadyPath] = useState<string | null>(null)
   const loading = readyPath !== page
 
   return (
-    // LazyMotion + `m` ships only the animation features this fade needs.
     <LazyMotion features={domAnimation} strict>
       <MotionConfig reducedMotion="user">
         <TopProgress active={loading} />
@@ -74,7 +62,6 @@ const Layout = () => {
                 animate={{ opacity: 1, transition: { duration: 0.25, ease: EASE_OUT } }}
                 exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeIn' } }}
               >
-                {/* No fallback content: the top progress bar shows the wait. */}
                 <Suspense fallback={null}>
                   <FrozenOutlet />
                   <PageReady path={page} onReady={setReadyPath} />

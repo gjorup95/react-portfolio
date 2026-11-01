@@ -28,7 +28,7 @@
 
   /* light theme */
   --bg: #ffffff;
-  --tint: #eef3f4; /* page background */
+  --tint: #eef3f4;
   --surface: #e8f0f1;
   --border: #c9d8db;
   --text: #093f4b;
@@ -39,26 +39,20 @@
   --on-primary: #ffffff;
   --on-primary-muted: #a9c3c8;
 
-  /* type */
   --font-display: 'Bebas Neue Pro', 'Arial Narrow', sans-serif;
   --font-body: 'Montserrat', system-ui, sans-serif;
 
-  /* motion: one easing curve and a small set of durations for the whole site */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 0.15s;
   --dur-enter: 0.5s;
 
-  /* layout */
   --rail: 5rem;
   --gutter: clamp(1.25rem, 5vw, 5rem);
 
   color-scheme: light;
 }
 
-/*
- * Dark palette, kept ready but not applied: the site uses the light theme.
- * Enable it by setting data-theme="dark" on <html>.
- */
+/* Not applied (the site is light-only); enable with data-theme="dark" on <html>. */
 :root[data-theme='dark'] {
   --bg: #062d36;
   --tint: #062d36;
@@ -125,7 +119,7 @@ button {
   outline-offset: 3px;
 }
 
-/* Turn off the browser's rectangular tap flash; links and buttons have their own states. */
+/* The browser's tap flash is a rectangle, even on round elements. */
 a,
 button,
 input,
@@ -133,7 +127,6 @@ textarea {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Buttons shared by every page */
 .button {
   display: inline-flex;
   align-items: center;
@@ -174,7 +167,6 @@ textarea {
   }
 }
 
-/* Shared entrance: content rises slightly while fading in. */
 @keyframes riseIn {
   from {
     opacity: 0;

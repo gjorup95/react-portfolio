@@ -1,6 +1,6 @@
 import './index.scss'
 import AnimateLetters from '../AnimateLetters'
-import { useState, useRef, type FormEvent } from 'react'
+import { useState, useRef, type SubmitEvent } from 'react'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -20,7 +20,7 @@ L.Icon.Default.mergeOptions({
 const Contact = () => {
   const [formStatus, setFormStatus] = useState<FormStatus>('')
   const form = useRef<HTMLFormElement>(null)
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const sendEmail = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormStatus('pending')
     emailjs

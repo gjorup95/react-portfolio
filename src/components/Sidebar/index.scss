@@ -20,7 +20,6 @@
     height: auto;
     border-radius: 50%;
     border: 2px solid var(--on-primary-muted);
-    /* No square drag ghost or selection box when clicking the photo. */
     -webkit-user-drag: none;
     user-select: none;
     transition: transform var(--dur-fast) var(--ease-out),
@@ -31,15 +30,11 @@
     border-color: var(--on-primary);
   }
 
-  /* Round press feedback instead of a square highlight. */
   &:active img {
     transform: scale(0.92);
   }
 
-  /*
-   * Keyboard focus: a round ring drawn with box-shadow (follows the circle in
-   * every browser, unlike outline in older Safari), yellow so it shows on teal.
-   */
+  /* box-shadow, not outline: older Safari draws outlines square on round elements. */
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary), 0 0 0 5px var(--highlight);
@@ -67,7 +62,6 @@
       background: var(--primary-hover);
     }
 
-    /* Tooltip with the page name, shown on hover and keyboard focus. */
     &::after {
       content: attr(aria-label);
       position: absolute;
@@ -158,7 +152,6 @@
   }
 }
 
-/* Small phones: tighten the top bar so all icons fit in 320px. */
 @media (max-width: 400px) {
   .nav-bar {
     padding-inline: 0.5rem;

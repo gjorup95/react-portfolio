@@ -4,7 +4,6 @@
   animation: letterIn 0.5s var(--ease-out) both;
 }
 
-/* Once the entrance is over, letters only animate when hovered. */
 .letter--settled {
   animation: none;
 

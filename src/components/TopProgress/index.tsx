@@ -2,19 +2,15 @@ import './index.scss'
 import { useEffect, useRef } from 'react'
 
 type TopProgressProps = {
-  /** True from the moment navigation starts until the new page is ready. */
   active: boolean
 }
 
-// Pages don't report real progress, so the bar eases toward this point while
-// waiting and only completes once the page is actually ready.
+// Pages don't report real progress: ease toward this while waiting, finish when ready.
 const WAIT_AT = 0.9
 
-/** Thin progress bar fixed to the top edge of the viewport. */
 const TopProgress = ({ active }: TopProgressProps) => {
   const barRef = useRef<HTMLDivElement>(null)
-  // Current fill (0-1). Starts part-way when mounted mid-load, picking up from
-  // the bar in index.html that covers the initial JavaScript download.
+  // Starts part-way to continue the index.html bar shown during the initial load.
   const progress = useRef(active ? 0.5 : 0)
 
   useEffect(() => {
@@ -26,7 +22,6 @@ const TopProgress = ({ active }: TopProgressProps) => {
       bar.style.transform = `scaleX(${value})`
       bar.style.opacity = String(opacity)
     }
-    // Jump without animating (used when starting over from empty).
     const jump = (value: number, opacity: number) => {
       bar.style.transition = 'none'
       render(value, opacity)
@@ -44,7 +39,7 @@ const TopProgress = ({ active }: TopProgressProps) => {
     }
 
     if (progress.current === 0) return
-    // Fill to 100% (0.2s), hold briefly so the completion is visible, then fade.
+    // Hold at 100% briefly, otherwise the fade starts before completion is visible.
     render(1, 1)
     const fade = setTimeout(() => render(1, 0), 350)
     const reset = setTimeout(() => jump(0, 0), 750)

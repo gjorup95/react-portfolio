@@ -3,8 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from '../Layout'
 import Home from '../Home'
 
-// Home is the landing page and ships in the main bundle; the other pages are
-// split into their own chunks and prefetched once the browser is idle.
+// Home is the landing page, so it stays in the main bundle.
 const loadAbout = () => import('../about')
 const loadContact = () => import('../Contact')
 const loadPortfolio = () => import('../Scroll')

@@ -1,4 +1,3 @@
-/* One shared width so the text, form and map line up as a single column. */
 .contact-page .text-zone > * {
   max-width: 34rem;
 }
@@ -50,7 +49,6 @@
   }
 }
 
-/* Directly below the form, in the same column. */
 .map-wrap {
   height: clamp(16rem, 35vh, 22rem);
   margin-top: 2rem;

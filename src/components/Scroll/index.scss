@@ -1,8 +1,3 @@
-/*
- * Centred single-column layout. The "Portfolio" header defines the column:
- * it is sized to fill exactly this width, and every project below uses the
- * same column, so all edges line up with the header.
- */
 .portfolio-page {
   --column: min(44rem, 100% - 2 * var(--gutter));
 

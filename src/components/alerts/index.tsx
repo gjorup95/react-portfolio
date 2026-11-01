@@ -12,17 +12,16 @@ type AlertsProps = {
   formRef: RefObject<HTMLFormElement | null>
 }
 
-const Alerts = (props: AlertsProps) => {
+const Alerts = ({ formStatus, formRef }: AlertsProps) => {
   const toastId = useRef<Id | null>(null)
-  const validateToast = () => {
-    if (props.formStatus === '') return
-    else if (props.formStatus === 'pending') {
+
+  useEffect(() => {
+    if (formStatus === 'pending') {
       toastId.current = toast.loading('Sender...')
       console.log('pending')
-      return
-    } else if (props.formStatus === 'done') {
+    } else if (formStatus === 'done') {
       console.log('done')
-      props.formRef.current?.reset()
+      formRef.current?.reset()
       if (toastId.current === null) return
       toast.update(toastId.current, {
         render: 'Gennemført',
@@ -32,13 +31,8 @@ const Alerts = (props: AlertsProps) => {
         hideProgressBar: true,
         closeOnClick: true,
       })
-      return
     }
-  }
-  useEffect(() => {
-    validateToast()
-    // eslint-disable-next-line
-  }, [props.formStatus])
+  }, [formStatus, formRef])
 
   return (
     <div>

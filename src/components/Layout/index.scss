@@ -14,7 +14,6 @@
   background: var(--tint);
 }
 
-/* Wrapper animated on route change; stretches so pages can fill the height. */
 .page-transition {
   flex: 1 0 auto;
   display: flex;
@@ -26,11 +25,6 @@
   padding: clamp(2rem, 6vh, 4rem) var(--gutter);
 }
 
-/*
- * Split teal layout shared by every page: a tinted content column on the left
- * and a teal panel on the right. The main content comes first in the tinted
- * column; a "follow" block steps down and to the right (staggered) after it.
- */
 .split-page {
   --split: 62%;
 
@@ -38,7 +32,7 @@
   grid-template-columns: var(--split) 1fr;
   align-content: center;
   row-gap: clamp(2.5rem, 6vh, 4rem);
-  /* No side padding, so the grid columns line up exactly with the colour split. */
+  /* Side padding would shift the grid columns away from the colour split. */
   padding-inline: 0;
   background: linear-gradient(
     to right,
@@ -57,7 +51,6 @@
   animation: riseIn var(--dur-enter) var(--ease-out) 0.35s both;
 }
 
-/* Text column shared by the About and Contact pages. */
 .text-zone {
   max-width: 34rem;
 
@@ -70,19 +63,17 @@
     max-width: 62ch;
   }
 
-  /* Width limits live on the paragraphs/form, since the split adds padding here. */
+  /* The split's padding would eat into a max-width here; limits live on the children. */
   .split-page & {
     max-width: none;
   }
 
-  /* Everything below the heading follows the heading's letters in. */
   > :not(h1) {
     animation: riseIn var(--dur-enter) var(--ease-out) 0.25s both;
   }
 }
 
 @media (max-width: 900px) {
-  /* Stacked: one tinted column; each follow block sits in a full-width teal band. */
   .split-page {
     grid-template-columns: minmax(0, 1fr);
     padding-inline: var(--gutter);

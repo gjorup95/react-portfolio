@@ -1,4 +1,3 @@
-/* Each project uses the same centred column as the "Portfolio" header. */
 .text-container {
   padding: clamp(2.5rem, 8vh, 5rem) 0;
   border-top: 1px solid var(--border);
@@ -80,7 +79,7 @@ h2.subtitle-year {
     box-sizing: border-box;
   }
 
-  /* Icons are square; image logos widen to fit, so wordmarks stay readable. */
+  /* Image logos may be wide wordmarks, so let the tile widen. */
   .technology-icon {
     width: 5.5rem;
   }

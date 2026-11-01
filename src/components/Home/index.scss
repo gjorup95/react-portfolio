@@ -10,13 +10,12 @@
   .name-header {
     display: flex;
     flex-direction: column;
-    /* Sized so the name always fits on one line inside the white panel. */
     font-size: clamp(3rem, 9.5vw, 10rem);
     line-height: 0.9;
     color: var(--primary);
   }
 
-  /* Each letter is its own inline-block, so stop the browser wrapping between them. */
+  /* Each letter is an inline-block, so the line could otherwise break between any two. */
   .name-line {
     white-space: nowrap;
   }
@@ -59,7 +58,6 @@
 }
 
 @media (max-width: 900px) {
-  /* Scale with the viewport so the one-line name fits even on 320px screens. */
   .home-page .name-header {
     font-size: min(17vw, 5.5rem);
   }

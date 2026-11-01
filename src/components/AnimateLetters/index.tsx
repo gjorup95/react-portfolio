@@ -1,7 +1,7 @@
 import './index.scss'
 import { useEffect, useState } from 'react'
 
-// Timing for the letter-by-letter entrance, in seconds.
+// Seconds.
 const START = 0.05
 const STAGGER = 0.03
 const DURATION = 0.5
@@ -12,10 +12,6 @@ type AnimateLettersProps = {
   startIndex?: number
 }
 
-/**
- * Letters glide in one after another; once settled they react to hover.
- * Screen readers get the plain text instead of individual letters.
- */
 const AnimateLetters = ({ text, startIndex = 0 }: AnimateLettersProps) => {
   const [settled, setSettled] = useState(false)
 
