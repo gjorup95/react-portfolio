@@ -17,6 +17,12 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 })
 
+// Public by design: EmailJS keys are meant to ship in browser code. Abuse is
+// limited by the domain allowlist and rate limit in the EmailJS dashboard.
+const EMAILJS_SERVICE_ID = 'service_cgyic9n'
+const EMAILJS_TEMPLATE_ID = 'template_1iziy8v'
+const EMAILJS_PUBLIC_KEY = '6IgMgQazJPFAvg2zj'
+
 const Contact = () => {
   const [formStatus, setFormStatus] = useState<FormStatus>('')
   const form = useRef<HTMLFormElement>(null)
@@ -24,24 +30,13 @@ const Contact = () => {
     e.preventDefault()
     setFormStatus('pending')
     emailjs
-      .sendForm(
-        'service_cgyic9n',
-        'template_1iziy8v',
-        e.currentTarget,
-        '6IgMgQazJPFAvg2zj'
-      )
-      .then(
-        (result) => {
-          console.log(result.text)
-        },
-        (error) => {
-          console.log(error.text)
-          setFormStatus('error')
-        }
-      )
-      .finally(() => {
-        setFormStatus('done')
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, e.currentTarget, {
+        publicKey: EMAILJS_PUBLIC_KEY,
       })
+      .then(
+        () => setFormStatus('done'),
+        () => setFormStatus('error')
+      )
   }
 
   return (
@@ -64,6 +59,7 @@ const Contact = () => {
               aria-label="Navn"
               type="text"
               name="name"
+              maxLength={100}
               required
             />
 
@@ -73,6 +69,7 @@ const Contact = () => {
               aria-label="Email"
               type="email"
               name="email"
+              maxLength={254}
               required
             />
 
@@ -82,6 +79,7 @@ const Contact = () => {
               aria-label="Emne"
               type="text"
               name="subject"
+              maxLength={150}
               required
             />
 
@@ -90,9 +88,14 @@ const Contact = () => {
               placeholder="Besked"
               aria-label="Besked"
               name="message"
+              maxLength={5000}
               required
             ></textarea>
-            <button type="submit" className="button button--primary">
+            <button
+              type="submit"
+              className="button button--primary"
+              disabled={formStatus === 'pending'}
+            >
               Send besked
             </button>
           </form>
@@ -104,10 +107,12 @@ const Contact = () => {
               dragging={false}
               doubleClickZoom={false}
               scrollWheelZoom={false}
-              attributionControl={false}
               zoomControl={true}
             >
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              />
               <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
             </MapContainer>
           </div>

@@ -145,6 +145,11 @@ textarea {
     border-color var(--dur-fast);
 }
 
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
 .button--primary {
   background: var(--highlight);
   border-color: var(--highlight);
