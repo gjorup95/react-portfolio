@@ -5,11 +5,6 @@ import './index.scss'
 import { useEffect, useRef } from 'react'
 const Alerts = (props) => {
   const toastId = useRef(null)
-  useEffect(() => {
-    validateToast()
-    // eslint-disable-next-line
-  }, [props.formStatus])
-
   const validateToast = () => {
     if (props.formStatus === '') return
     else if (props.formStatus === 'pending') {
@@ -30,6 +25,11 @@ const Alerts = (props) => {
       return
     }
   }
+  useEffect(() => {
+    validateToast()
+    // eslint-disable-next-line
+  }, [props.formStatus])
+
   return (
     <div>
       <ToastContainer

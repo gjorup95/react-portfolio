@@ -2,10 +2,24 @@ import './index.scss'
 import AnimateLetters from '../AnimateLetters'
 import { useState, useEffect, useRef } from 'react'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+import markerIcon from 'leaflet/dist/images/marker-icon.png'
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
+import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 import emailjs from '@emailjs/browser'
 import Alerts from '../alerts'
 import IsLoadingHOC from '../customLoader/IsLoadingHOC'
 import { motion } from 'framer-motion'
+
+// Bundlers rename/inline Leaflet's default marker images, which breaks its
+// automatic icon-path detection, so point it at the imported assets.
+delete L.Icon.Default.prototype._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  iconRetinaUrl: markerIcon2x,
+  shadowUrl: markerShadow,
+})
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')

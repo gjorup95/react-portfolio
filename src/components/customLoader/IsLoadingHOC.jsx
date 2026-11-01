@@ -11,7 +11,7 @@ export const IsLoadingHOC = (WrappedComponentPage, loadingMessage) => {
 
     return (
       <>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
           {isLoading && (
             <motion.div
               layout

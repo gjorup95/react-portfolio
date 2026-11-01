@@ -36,7 +36,7 @@ class ScrollPage extends React.Component {
                        "Developed new, responsive, WCAG compatible document types for user completion of legal documents",
                        "Created 3rd party integration, with event-based publishing of internal documents for public access",
                        "Developed a new case handling flow with pagination, searching and filtering with angular and ngrx store",
-                     ]} projectTitle={"Digital tinglysning"} year={"2023 – 2024"} technologies={[faJava, faAngular, mySqlLogo]}>>
+                     ]} projectTitle={"Digital tinglysning"} year={"2023 – 2024"} technologies={[faJava, faAngular, mySqlLogo]}>
           </Portfolio>
 
           <Portfolio imageSrc={mitDKImage}
@@ -44,7 +44,7 @@ class ScrollPage extends React.Component {
                        "Synchronised public and private user types for a unified mail experience",
                        "Developed new customizable forms for company user research",
                        "Sentry/Kibana log monitoring and debugging across microservices and react native app",
-                     ]} projectTitle={"MitDK"} year={"2023 – 2023"} technologies={[faJava, faReact, sentryLogo]}>>
+                     ]} projectTitle={"MitDK"} year={"2023 – 2023"} technologies={[faJava, faReact, sentryLogo]}>
           </Portfolio>
 
         </ScrollableContainer>

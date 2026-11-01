@@ -1,4 +1,4 @@
-﻿export const logoAspNet = {
+export const logoAspNet = {
   icon: [
     64,
     64,
