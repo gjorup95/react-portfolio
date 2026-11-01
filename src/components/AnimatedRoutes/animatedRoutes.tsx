@@ -1,25 +1,43 @@
+import { lazy, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import Layout from '../Layout'
 import Home from '../Home'
-import About from '../about'
-import Contact from '../Contact'
-import ScrollPage from '../Scroll'
-import { useLocation } from 'react-router-dom'
-import { Route, Routes } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
+
+// Home is the landing page and ships in the main bundle; the other pages are
+// split into their own chunks and prefetched once the browser is idle.
+const loadAbout = () => import('../about')
+const loadContact = () => import('../Contact')
+const loadPortfolio = () => import('../Scroll')
+
+const About = lazy(loadAbout)
+const Contact = lazy(loadContact)
+const ScrollPage = lazy(loadPortfolio)
+
+const prefetchPages = () => {
+  void loadAbout()
+  void loadContact()
+  void loadPortfolio()
+}
+
 const AnimatedRoutes = () => {
-  const location = useLocation()
+  useEffect(() => {
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(prefetchPages, { timeout: 2000 })
+      return () => cancelIdleCallback(id)
+    }
+    const id = setTimeout(prefetchPages, 1000)
+    return () => clearTimeout(id)
+  }, [])
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/react-portfolio" element={<Layout />}>
-          <Route path="/react-portfolio" index element={<Home />} />
-          <Route path="/react-portfolio/about" element={<About />} />
-          <Route path="/react-portfolio/portfolio" element={<ScrollPage />} />
-          <Route path="/react-portfolio/contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <Routes>
+      <Route path="/react-portfolio" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="portfolio" element={<ScrollPage />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+    </Routes>
   )
 }
 export default AnimatedRoutes

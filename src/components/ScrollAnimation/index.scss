@@ -1,7 +1,7 @@
-$colorBg: #4683a0;
+$colorBg: var(--bg);
 //$colorBg: var(--color-secondary);
-$colorOutline: var(--textColor-yellow);
-$colorOutlineFade: #b9bdc1;
+$colorOutline: var(--primary);
+$colorOutlineFade: var(--border);
 //$colorOutlineFade: gray;
 
 $widthMouse: 52px;
@@ -36,21 +36,21 @@ $animDelay: 2.5s;
   font-weight: bold;
   color: $colorOutline;
   text-transform: uppercase;
-  animation: colorText $animDuration ease-out 2s infinite,
-    nudgeText $animDuration ease-out 2s infinite;
+  animation: riseIn var(--dur-enter) var(--ease-out) 0.3s both,
+    colorText $animDuration ease-out 1s infinite,
+    nudgeText $animDuration ease-out 1s infinite;
 }
 
 .mouse {
-  opacity: 0;
   @include bgGradient;
   position: relative;
   width: $widthMouse;
   height: $heightMouse;
   border-radius: 100px;
   background-size: 100% 200%;
-  animation: 2s fadeIn ease-in both,
-    colorSlide $animDuration ease-in-out 2s infinite,
-    nudgeMouse $animDuration ease-in 2s infinite;
+  animation: riseIn var(--dur-enter) var(--ease-out) 0.3s both,
+    colorSlide $animDuration ease-in-out 1s infinite,
+    nudgeMouse $animDuration ease-in 1s infinite;
   &:before,
   &:after {
     content: '';
@@ -72,19 +72,9 @@ $animDelay: 2.5s;
     width: $sizeTrackball;
     height: $sizeTrackball;
     border-radius: 100%;
-    animation: trackBallSlide $animDuration linear 2s infinite;
+    animation: trackBallSlide $animDuration linear 1s infinite;
   }
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes colorSlide {
   0% {
     background-position: 0% 100%;

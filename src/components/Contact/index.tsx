@@ -1,6 +1,6 @@
 import './index.scss'
 import AnimateLetters from '../AnimateLetters'
-import { useState, useEffect, useRef, type FormEvent } from 'react'
+import { useState, useRef, type FormEvent } from 'react'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -9,8 +9,6 @@ import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 import emailjs from '@emailjs/browser'
 import Alerts, { type FormStatus } from '../alerts'
-import IsLoadingHOC from '../customLoader/IsLoadingHOC'
-import { motion, type Variants } from 'framer-motion'
 
 // Bundlers rename/inline Leaflet's default marker images, which breaks its
 // automatic icon-path detection, so point it at the imported assets.
@@ -22,32 +20,8 @@ L.Icon.Default.mergeOptions({
 })
 
 const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
   const [formStatus, setFormStatus] = useState<FormStatus>('')
   const form = useRef<HTMLFormElement>(null)
-  useEffect(() => {
-    setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 2200)
-  }, [])
-
-  const transition: Variants = {
-    enter: {
-      scale: 0.75,
-      opacity: 0.25,
-    },
-    animate: {
-      scale: 1,
-      transition: { delay: 0.9, ease: 'easeInOut', duration: 0.3 },
-      opacity: 1,
-    },
-    exit: {
-      opacity: [1, 0.75, 0],
-      scale: [1, 0.75, 0.75],
-      x: [0, 0, 1200],
-      transition: { duration: 0.7, times: [0, 0.3, 0.5] },
-    },
-  }
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     //do something else
@@ -74,22 +48,11 @@ const Contact = () => {
   }
 
   return (
-    <motion.div
-      layout
-      className="motion"
-      initial="enter"
-      animate="animate"
-      exit="exit"
-      variants={transition}
-    >
+    <>
       <div className="container contact-page">
         <div className="text-zone">
           <h1>
-            <AnimateLetters
-              letterClass={letterClass}
-              stringToAnimate={'Kontakt'}
-              passedIndex={15}
-            />
+            <AnimateLetters text="Kontakt" />
           </h1>
 
           <p className="paragraph-contact">
@@ -101,6 +64,7 @@ const Contact = () => {
             <input
               className="input-item name"
               placeholder="Navn"
+              aria-label="Navn"
               type="text"
               name="name"
               required
@@ -109,6 +73,7 @@ const Contact = () => {
             <input
               className="input-item email"
               placeholder="Email"
+              aria-label="Email"
               type="email"
               name="email"
               required
@@ -117,6 +82,7 @@ const Contact = () => {
             <input
               className="input-item topic"
               placeholder="Emne"
+              aria-label="Emne"
               type="text"
               name="subject"
               required
@@ -124,11 +90,14 @@ const Contact = () => {
 
             <textarea
               className="input-item"
-              placeholder="Besked..."
+              placeholder="Besked"
+              aria-label="Besked"
               name="message"
               required
             ></textarea>
-            <input type="submit" className="flat-button" value="SEND" />
+            <button type="submit" className="button button--primary">
+              Send besked
+            </button>
           </form>
         </div>
 
@@ -148,8 +117,8 @@ const Contact = () => {
         </div>
       </div>
       <Alerts formStatus={formStatus} formRef={form} />
-    </motion.div>
+    </>
   )
 }
 
-export default IsLoadingHOC(Contact, 'Loading...')
+export default Contact

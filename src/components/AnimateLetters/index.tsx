@@ -1,26 +1,48 @@
 import './index.scss'
+import { useEffect, useState } from 'react'
+
+// Timing for the letter-by-letter entrance, in seconds.
+const START = 0.05
+const STAGGER = 0.03
+const DURATION = 0.5
+
 type AnimateLettersProps = {
-  letterClass: string
-  stringToAnimate: string
-  passedIndex: number
+  text: string
+  /** Offset into a longer sequence, so several lines animate as one. */
+  startIndex?: number
 }
 
-const AnimateLetters = ({
-  letterClass,
-  stringToAnimate,
-  passedIndex,
-}: AnimateLettersProps) => {
-  const stripStringHelper = (string: string) => {
-    return string.split('')
-  }
+/**
+ * Letters glide in one after another; once settled they react to hover.
+ * Screen readers get the plain text instead of individual letters.
+ */
+const AnimateLetters = ({ text, startIndex = 0 }: AnimateLettersProps) => {
+  const [settled, setSettled] = useState(false)
+
+  useEffect(() => {
+    const total = START + (startIndex + text.length) * STAGGER + DURATION
+    const timeout = setTimeout(() => setSettled(true), total * 1000)
+    return () => clearTimeout(timeout)
+  }, [startIndex, text.length])
+
   return (
     <span>
-      {stripStringHelper(stringToAnimate).map((char, i) => (
-        //
-        <span key={char + i} className={`${letterClass} _${i + passedIndex}`}>
-          {char}
-        </span>
-      ))}
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">
+        {text.split('').map((char, i) => (
+          <span
+            key={char + i}
+            className={settled ? 'letter letter--settled' : 'letter'}
+            style={
+              settled
+                ? undefined
+                : { animationDelay: `${START + (startIndex + i) * STAGGER}s` }
+            }
+          >
+            {char}
+          </span>
+        ))}
+      </span>
     </span>
   )
 }

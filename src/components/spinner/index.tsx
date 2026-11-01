@@ -13,22 +13,22 @@ const Spinner = () => {
     <div className="stage-cube-cont">
       <div className="cubespinner">
         <div className="face1">
-          <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+          <FontAwesomeIcon icon={faReact} />
         </div>
         <div className="face2">
-          <FontAwesomeIcon icon={faJava} color="#5382a1" />
+          <FontAwesomeIcon icon={faJava} />
         </div>
         <div className="face3">
-          <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+          <FontAwesomeIcon icon={faJsSquare} />
         </div>
         <div className="face4">
-          <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+          <FontAwesomeIcon icon={faGitAlt} />
         </div>
         <div className="face5">
-          <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+          <FontAwesomeIcon icon={faCss3} />
         </div>
         <div className="face6">
-          <FontAwesomeIcon icon={faNode} color="#EFD81D" />
+          <FontAwesomeIcon icon={faNode} />
         </div>
       </div>
     </div>

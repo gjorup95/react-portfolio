@@ -1,68 +1,49 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
 import AnimateLetters from '../AnimateLetters'
-import { useEffect, useState } from 'react'
+
+const user = {
+  name: 'Troels Gjørup',
+  about: 'Fullstack Developer.',
+  abilities: [
+    'Frontend & Backend',
+    'Java & Spring',
+    'C# & .NET',
+    'Angular & ReactJS',
+  ],
+}
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-  const [render, setRender] = useState(false)
-  const user = {
-    name: 'Troels Gjørup',
-    about: 'Fullstack Developer.',
-    abilities: 'Frontend & Backend | Java & Spring | C# & .NET | Angular & ReactJS'
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLetterClass('text-animate-hover')
-      setRender(true)
-    }, 2700)
-  }, [])
-
-  const helper = () => {
-    if (render) {
-      return (
-        <>
-          <h2>{user.abilities}</h2>
-          <div className="button-container">
-            <Link to="/react-portfolio/contact" className="flat-button">
-              KONTAKT MIG
-            </Link>
-            <a
-              href="https://drive.google.com/file/d/1-CQXSsjW_gzq6b3GGp0xWTYKImB9YWHX/view?usp=sharing"
-              download
-              target="_blank"
-              rel="noreferrer"
-              className="flat-button"
-            >
-              HENT CV
-            </a>
-          </div>
-        </>
-      )
-    }
-  }
-
   return (
     <div className="container home-page">
       <div className="text-zone">
         <h1 className="name-header">
-          <AnimateLetters
-            letterClass={letterClass}
-            stringToAnimate={user.name}
-            passedIndex={0}
-          />
-          <br />
+          <span className="name-line">
+            <AnimateLetters text={user.name} />
+          </span>
           <span className="position-header">
-            <AnimateLetters
-              letterClass={letterClass}
-              stringToAnimate={user.about}
-              passedIndex={user.name.length}
-            />
+            <AnimateLetters text={user.about} startIndex={user.name.length} />
           </span>
         </h1>
-        {helper()}
-        <div className="image-container"></div>
+        <ul className="abilities">
+          {user.abilities.map((ability) => (
+            <li key={ability}>{ability}</li>
+          ))}
+        </ul>
+        <div className="button-container">
+          <Link to="/react-portfolio/contact" className="button button--primary">
+            Kontakt mig
+          </Link>
+          <a
+            href="https://drive.google.com/file/d/1-CQXSsjW_gzq6b3GGp0xWTYKImB9YWHX/view?usp=sharing"
+            download
+            target="_blank"
+            rel="noreferrer"
+            className="button button--secondary"
+          >
+            Hent CV
+          </a>
+        </div>
       </div>
     </div>
   )

@@ -1,89 +1,94 @@
 .home-page {
+  --split: 62%;
+
+  display: grid;
+  grid-template-columns: var(--split) 1fr;
+  align-items: center;
+  /* Split panel: tinted text side, teal side. */
+  background: linear-gradient(
+    to right,
+    var(--tint) var(--split),
+    var(--primary) var(--split)
+  );
+
+  /* No side padding, so the grid columns line up exactly with the colour split. */
+  padding-inline: 0;
+
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 35%;
-    width: 55%;
-    max-height: 90%;
+    max-width: none;
+
+    > :not(h1) {
+      animation: none;
+    }
+    padding-left: var(--gutter);
+    padding-right: clamp(1.5rem, 4vw, 4rem);
   }
+
   .name-header {
-    letter-spacing: 0.2rem;
-  }
-  .position-header {
-    font-size: 6rem;
-  }
-
-  .image-container {
-    position: absolute;
-    top: -275px;
-    z-index: -1;
-    right: -290px;
-  }
-  .profile-picture {
-    width: 600px;
-    opacity: 0.85;
-    border-radius: 5%;
-    transform: scaleX(-1);
-  }
-  h1 {
-    line-height: 4.25rem;
-    margin: 0;
-
-    &:before {
-      content: '<h1>';
-      font-family: 'La Belle Aurore', 'cursive';
-      color: var(--textColor-yellow);
-      font-size: 1.125rem;
-      position: absolute;
-      margin-top: -2.5rem;
-      left: -0.9375rem;
-      opacity: 0.8;
-    }
-
-    &:after {
-      content: '<h1/>';
-      font-family: 'La Belle Aurore', cursive;
-      font-size: 1.125rem;
-      color: var(--textColor-yellow);
-      position: absolute;
-      margin-top: 2rem;
-      margin-left: 0.5rem;
-      opacity: 0.8;
-      letter-spacing: 0.1rem;
-    }
+    display: flex;
+    flex-direction: column;
+    /* Sized so the name always fits on one line inside the white panel. */
+    font-size: clamp(3rem, 9.5vw, 10rem);
+    line-height: 0.9;
+    color: var(--primary);
   }
 
-  h2 {
-    margin-top: 1rem;
-    font-weight: 200;
-    letter-spacing: 0.25rem;
-    animation: fadeIn 1s 0.3s backwards;
-  }
-  .button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .flat-button {
-    text-align: center;
-    background: none;
-    cursor: pointer;
-    color: var(--textColor-yellow);
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.25rem;
-    font-family: 'Oxygen', 'sans-serif';
-    text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid #ffd700;
-    margin-top: 0.5rem;
-    float: left;
-    animation: fadeIn 1s 0.6s backwards;
+  /* Each letter is its own inline-block, so stop the browser wrapping between them. */
+  .name-line {
     white-space: nowrap;
+  }
 
-    &:hover {
-      background: var(--hover-background);
-      color: var(--hover-color);
+  .position-header {
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 0.45em;
+    color: var(--text-muted);
+  }
+
+  .abilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    animation: riseIn var(--dur-enter) var(--ease-out) 0.45s both;
+
+    li {
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      background: var(--bg);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    animation: riseIn var(--dur-enter) var(--ease-out) 0.55s both;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-inline: var(--gutter);
+    background: var(--tint);
+
+    .text-zone {
+      padding-inline: 0;
+    }
+
+    /* Scale with the viewport so the one-line name fits even on 320px screens. */
+    .name-header {
+      font-size: min(17vw, 5.5rem);
     }
   }
 }

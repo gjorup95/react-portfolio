@@ -1,111 +1,160 @@
 .nav-bar {
-  width: 80px;
-  height: 100%;
-  position: absolute;
-  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 1.25rem;
+  background: var(--primary);
+  color: var(--on-primary-muted);
   z-index: 3;
-  min-height: 500px;
 }
 
 .logo {
   display: block;
-  width: 72px;
+  width: 3.5rem;
+  border-radius: 50%;
+
   img {
-    margin-top: 1rem;
     display: block;
-    position: relative;
-    width: inherit;
-    margin-left: 0.5rem;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid var(--on-primary-muted);
   }
 }
+
 .sidebar {
-  display: block;
-  text-align: center;
-  position: absolute;
-  height: 210px;
-  top: 50%;
-  margin-top: -120px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
   a {
-    font-size: 22px;
-    color: #4d4d4e;
-    display: block;
-    line-height: 51px;
-    height: 51px;
     position: relative;
-    text-decoration: none;
-    i {
-      transition: all 0.3s ease-out;
-    }
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.25rem;
+    font-size: 1.35rem;
+    color: var(--on-primary-muted);
+    transition: color 0.15s, background-color 0.15s;
+
     &:hover {
-      color: #ffd700;
-      svg {
-        opacity: 0;
-      }
-      &::after {
-        opacity: 1;
-      }
+      color: var(--on-primary);
+      background: var(--primary-hover);
     }
+
+    /* Tooltip with the page name, shown on hover and keyboard focus. */
     &::after {
-      content: '';
-      font-size: 0.875rem;
-      font-family: var(--font-primaryRegular);
-      font-weight: 800;
-      letter-spacing: 2px;
+      content: attr(aria-label);
       position: absolute;
-      bottom: 0;
-      display: block;
-      width: 100%;
-      text-align: center;
+      left: calc(100% + 0.5rem);
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.25rem;
+      background: var(--primary);
+      color: var(--on-primary);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      white-space: nowrap;
       opacity: 0;
-      transition: all 0.3s ease-out;
+      pointer-events: none;
+      transition: opacity 0.15s;
     }
-    &:first-child {
-      &::after {
-        content: 'HOME';
-      }
+
+    &:hover::after,
+    &:focus-visible::after {
+      opacity: 1;
     }
-  }
-  a.about-link {
-    &:after {
-      content: 'ABOUT';
-    }
-  }
-  a.contact-link {
-    &:after {
-      content: 'CONTACT';
+
+    &:focus-visible {
+      outline-color: var(--highlight);
+      outline-offset: 0;
     }
   }
-  a.portfolio-link {
-    &::after {
-      content: 'PORTFOLIO';
-    }
-  }
+
   a.active {
-    svg {
-      color: #ffd700;
-    }
+    background: var(--highlight);
+    color: var(--on-highlight);
   }
 }
-ul {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  display: block;
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
   padding: 0;
   list-style: none;
-  text-align: center;
-  margin: 0;
-  li {
-    a {
-      padding: 7px 0;
-      display: block;
-      font-size: 15px;
-      line-height: 16px;
 
-      &:hover svg {
-        color: #ffd700;
-      }
+  a {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    color: var(--on-primary-muted);
+
+    &:hover {
+      color: var(--on-primary);
+    }
+
+    &:focus-visible {
+      outline-color: var(--highlight);
     }
   }
 }
+
+@media (max-width: 900px) {
+  .nav-bar {
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    width: 2.5rem;
+  }
+
+  .sidebar {
+    flex-direction: row;
+
+    a {
+      width: 2.75rem;
+      height: 2.75rem;
+      font-size: 1.15rem;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .social-links {
+    flex-direction: row;
+  }
+}
+
+/* Small phones: tighten the top bar so all icons fit in 320px. */
+@media (max-width: 400px) {
+  .nav-bar {
+    padding-inline: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .logo {
+    width: 2.25rem;
+    flex-shrink: 0;
+  }
+
+  .sidebar a {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .social-links a {
+    width: 2.25rem;
+  }
+}
+

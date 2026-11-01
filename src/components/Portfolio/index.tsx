@@ -57,9 +57,7 @@ const Portfolio = ({
             return (
               <FontAwesomeIcon
                 icon={item}
-                size="8x"
-                style={{ gridColumn: `${(index % 3) + 1} / span 1` }}
-                color="#ffd700"
+                className="technology-icon"
                 aria-label={`technologies ${index}`}
                 key={index}
               />
