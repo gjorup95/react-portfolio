@@ -13,7 +13,7 @@ import mySqlLogo from '../../assets/images/svg/mysqlLogo.svg'
 import { logoAspNet } from '../../utils/FontAwesomeIcons'
 import sentryLogo from '../../assets/images/svg/springLogo.svg'
 import digitalTinglysningImage from '../../assets/images/DigitalTinglysningNew.png'
-import par2Image from '../../assets/images/Par2.png'
+import par2Image from '../../assets/images/par2.png'
 
 class ScrollPage extends React.Component {
   render() {

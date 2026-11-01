@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Claude Code / agent tooling
+.claude/
+.agents/
+skills-lock.json
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
