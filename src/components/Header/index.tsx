@@ -1,7 +1,6 @@
 import './index.scss'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { pageKey } from '../../utils/pageKey'
-import profileLogo from '../../assets/images/pic-logo511.png'
 
 const HOME = '/react-portfolio'
 
@@ -11,9 +10,6 @@ const Header = () => {
 
   return (
     <header className="site-header">
-      <Link className="logo" to={HOME} aria-label="Home">
-        <img src={profileLogo} alt="" draggable={false} />
-      </Link>
       <nav className="site-nav" aria-label="Main menu">
         <Link to={HOME} className={onLanding ? 'active' : undefined} aria-current={onLanding ? 'page' : undefined}>
           Portfolio

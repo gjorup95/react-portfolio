@@ -11,6 +11,13 @@ import springLogo from '../assets/images/svg/springLogo.svg'
 /** An image URL, or a Font Awesome icon definition. */
 export type Technology = string | IconDefinition
 
+export type Quote = {
+  text: string
+  name: string
+  /** e.g. "Tech lead, Netcompany" */
+  role: string
+}
+
 export type Project = {
   title: string
   year: string
@@ -19,6 +26,8 @@ export type Project = {
   image: string
   contributions: string[]
   technologies: Technology[]
+  /** A real quote from a colleague or client on this project; shown under the card when set. */
+  quote?: Quote
 }
 
 export const projects: Project[] = [

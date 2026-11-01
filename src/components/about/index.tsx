@@ -10,23 +10,18 @@ const About = () => {
           <AnimateLetters text="About me" />
         </h1>
 
+
+
         <div className="text-block">
           <p>
-            I'm an ambitious full-stack developer with a strong interest in web
-            development, and I hold a master's degree in IT Product Development
-            from Aarhus University.
+            I’m a Senior Architect, primarily developing and maintaining Danish public-sector systems. Since 2023 I have designed and delivered solutions across .NET, Java and Angular for national systems such as MitDK, Elektronisk Tinglysning and Producentansvarsregisteret.
+
           </p>
           <p>
-            I care a lot about my own development and naturally enjoy learning new
-            technologies. Right now I'm building my skills in ASP.NET Core and
-            Angular to strengthen my web development toolbox.
+            I specialise in turning complex and changing legal requirements into maintainable, secure architectures. I work hands-on with modular monoliths, microservices, identity and access management (Keycloak, NemLog-in, MitID, OIDC/SAML) and integrations with national and EU services. I work directly with customers, from requirements workshops to architecture proposals and demos, and I own the architecture documentation and the technical decisions behind it.
           </p>
           <p>
-            On a personal level, I'm outgoing with a strong interest in engaging
-            with end users, and I thrive in teams with room for collaboration,
-            solution-oriented thinking and sparring. In my free time I enjoy
-            staying physically active through a variety of sports and feeding my
-            competitive streak.
+            I thrive in teams built on collaboration and professional sparring, where knowledge flows both ways. I enjoy raising the technical level of the people around me while continuously developing my own.
           </p>
         </div>
       </div>

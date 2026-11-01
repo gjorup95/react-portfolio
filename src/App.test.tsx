@@ -24,6 +24,6 @@ test('landing page shows the name and a card per project', () => {
       <App />
     </MemoryRouter>
   )
-  expect(screen.getByRole('heading', { level: 1, name: 'Troels Berthel Gjørup' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { level: 1, name: /Troels Berthel Gjørup.*Fullstack Developer.*Solution Architect/ })).toBeInTheDocument()
   expect(screen.getAllByRole('button', { name: /show more/i })).toHaveLength(3)
 })
