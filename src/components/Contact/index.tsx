@@ -102,7 +102,7 @@ const Contact = () => {
 
           <div className="map-wrap">
             <MapContainer
-              center={[56.17547802941453, 10.204873863180014]}
+              center={[55.6500, 12.5670]}
               zoom={13}
               dragging={false}
               doubleClickZoom={false}
@@ -113,7 +113,7 @@ const Contact = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
               />
-              <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
+              <Marker position={[55.6500, 12.5670]}></Marker>
             </MapContainer>
           </div>
         </div>

@@ -3,6 +3,10 @@
   grid-template-rows: auto minmax(0, 1fr);
   height: 100vh;
   height: 100dvh;
+  /* Faint dot grid for a blueprint feel, behind both the header and the page. */
+  background-color: var(--tint);
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 .page {
@@ -11,11 +15,6 @@
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
-  /* Faint dot grid for a blueprint feel; "local" lets it scroll with the content. */
-  background-color: var(--tint);
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-attachment: local;
   scroll-behavior: smooth;
 }
 
@@ -34,7 +33,7 @@
 
 .text-zone {
   h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 48px;
     text-align: center;
   }
 

@@ -25,5 +25,11 @@ test('landing page shows the name and a card per project', () => {
     </MemoryRouter>
   )
   expect(screen.getByRole('heading', { level: 1, name: /Troels Berthel Gjørup.*Fullstack Developer.*Solution Architect/ })).toBeInTheDocument()
-  expect(screen.getAllByRole('button', { name: /show more/i })).toHaveLength(3)
+  const cards = screen.getAllByRole('article')
+  expect(cards).toHaveLength(3)
+  // Contributions and technologies are shown on the card itself.
+  for (const card of cards) {
+    expect(within(card).getByRole('heading', { name: 'Key contributions' })).toBeInTheDocument()
+    expect(within(card).getAllByRole('listitem').length).toBeGreaterThan(0)
+  }
 })

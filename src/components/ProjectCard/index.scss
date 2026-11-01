@@ -3,24 +3,50 @@
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
+  /* No outline (overrides the panel's 1px border). */
+  border: 0;
 }
 
-/* Bleeds to the card edges by cancelling the panel padding. */
+/*
+ * Every screenshot sits on the same tinted backdrop, centred with even padding,
+ * so images of different shapes look deliberate rather than unevenly cropped.
+ * Spans the card's content width, below the title and year.
+ */
+.project-card__media {
+  --inset: clamp(0.75rem, 2vw, 1.25rem);
+
+  position: relative;
+  align-self: stretch;
+  justify-self: stretch;
+  aspect-ratio: 16 / 11;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--tint);
+}
+
+/* Shown at its own shape, never larger than its 600px source, so it stays sharp. */
 .project-card__image {
-  display: block;
-  width: calc(100% + 2 * var(--pad));
-  max-width: none;
-  margin: calc(-1 * var(--pad)) calc(-1 * var(--pad)) var(--pad);
-  /* Sized from the viewport so it stays near the top half of the card at any width. */
-  height: clamp(13rem, 24vw, 18rem);
-  object-fit: cover;
-  object-position: top;
-  border-bottom: 1px solid var(--border);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: min(100% - 2 * var(--inset), 600px);
+  max-height: calc(100% - 2 * var(--inset));
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  background: var(--bg);
+  box-shadow: 0 6px 18px -8px rgb(6 45 54 / 0.35);
 }
 
+/* Rows come from the parent (see .projects__item), so matching parts line up across cards. */
 @media (min-width: 901px) {
   .project-card {
-    min-height: 20rem;
+    display: grid;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    justify-items: start;
+    align-content: start;
   }
 }
 
@@ -42,85 +68,17 @@
   font-weight: 600;
 }
 
-.project-card__impact {
-  margin: 1.5rem 0;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--text);
-}
-
-.project-card__more {
-  margin-top: auto;
-}
-
-.text-button {
-  padding: 0.25rem 0;
-  border: 0;
-  background: none;
-  color: var(--primary);
+.project-card__label {
+  margin: 1.75rem 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.3em;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration-color: var(--highlight);
-  }
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
 }
 
-.project-dialog {
-  width: min(48rem, 100% - 2rem);
-  max-height: 90dvh;
-  padding: 0;
-  border: 0;
-  border-radius: 0.375rem;
-  background: var(--bg);
-  color: var(--text);
-  overflow: auto;
-
-  &[open] {
-    animation: riseIn 0.3s var(--ease-out);
-  }
-
-  &::backdrop {
-    background: rgb(6 45 54 / 0.6);
-  }
-
-  h3 {
-    margin: 2rem 0 0.75rem;
-    font-size: 1.5rem;
-    color: var(--primary);
-  }
-}
-
-.project-dialog__body {
-  padding: clamp(1.25rem, 4vw, 2.5rem);
-}
-
-.project-dialog__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-
-  h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--primary);
-  }
-}
-
-.project-dialog__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
-}
-
-.project-dialog__list {
+.project-card__list {
   margin: 0;
   padding-left: 1.25rem;
 
@@ -139,12 +97,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 
   img,
   .technology-icon {
-    height: 4.5rem;
-    padding: 0.75rem;
+    height: 3.5rem;
+    padding: 0.625rem;
     border: 1px solid var(--border);
     border-radius: 0.25rem;
     background: var(--bg);
@@ -154,19 +112,13 @@
   }
 
   .technology-icon {
-    width: 4.5rem;
+    width: 3.5rem;
   }
 
   /* Image logos may be wide wordmarks, so let the tile widen. */
   img {
     width: auto;
-    min-width: 4.5rem;
-    max-width: 12rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .project-card__image {
-    height: clamp(12rem, 55vw, 20rem);
+    min-width: 3.5rem;
+    max-width: 9rem;
   }
 }
