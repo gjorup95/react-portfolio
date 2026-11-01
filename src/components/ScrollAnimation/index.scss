@@ -28,11 +28,19 @@ $animDelay: 2.5s;
     );
 }
 
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .scroll-text {
   position: relative;
-  top: -3rem;
-  left: -1.25rem;
+  margin: 0;
   letter-spacing: 12px;
+  /* Letter-spacing also trails the last letter; pad the start so it centres. */
+  padding-left: 12px;
   font-weight: bold;
   color: $colorOutline;
   text-transform: uppercase;

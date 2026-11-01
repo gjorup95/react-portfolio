@@ -21,7 +21,7 @@ const Portfolio = ({
   technologies,
 }: PortfolioProps) => {
   return (
-    <div className="grid-container-portfolio">
+    <div className="grid-container-portfolio portfolio-column">
       <div className="text-container">
         <div className="title-container">
           <h1 className="title-unique">{projectTitle}</h1>

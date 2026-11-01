@@ -1,8 +1,16 @@
-.nav-scroll {
-  position: relative;
-  top: -200px;
-  z-index: 3;
-  right: -200px;
+/*
+ * Centred single-column layout. The "Portfolio" header defines the column:
+ * it is sized to fill exactly this width, and every project below uses the
+ * same column, so all edges line up with the header.
+ */
+.portfolio-page {
+  --column: min(44rem, 100% - 2 * var(--gutter));
+
+  min-height: 100%;
+  background: var(--tint);
 }
 
-
+.portfolio-column {
+  width: var(--column);
+  margin-inline: auto;
+}

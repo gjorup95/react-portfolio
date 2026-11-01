@@ -1,7 +1,7 @@
 .stage-cube-cont {
   display: grid;
   place-items: center;
-  min-height: 22rem;
+  min-height: 17rem;
   perspective: 1200px;
   animation: riseIn var(--dur-enter) var(--ease-out) 0.35s both;
 }
@@ -24,7 +24,7 @@
     font-size: 90px;
     color: var(--primary);
     background: var(--surface);
-    border: 12px solid var(--primary);
+    border: 12px solid var(--on-primary);
     box-sizing: border-box;
   }
 

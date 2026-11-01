@@ -1,12 +1,6 @@
-.contact-page {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: stretch;
-
-  .text-zone {
-    align-self: center;
-  }
+/* One shared width so the text, form and map line up as a single column. */
+.contact-page .text-zone > * {
+  max-width: 34rem;
 }
 
 .contact-form {
@@ -56,11 +50,11 @@
   }
 }
 
-/* The map follows the form in, slightly behind it. */
+/* Directly below the form, in the same column. */
 .map-wrap {
-  animation: riseIn var(--dur-enter) var(--ease-out) 0.35s both;
-  min-height: 24rem;
-  border: 3px solid var(--primary);
+  height: clamp(16rem, 35vh, 22rem);
+  margin-top: 2rem;
+  border: 1px solid var(--border);
   border-radius: 0.25rem;
   overflow: hidden;
 }
@@ -74,10 +68,6 @@
 }
 
 @media (max-width: 900px) {
-  .contact-page {
-    grid-template-columns: 1fr;
-  }
-
   .contact-form {
     grid-template-columns: 1fr;
 
@@ -85,5 +75,9 @@
     .button {
       grid-column: 1;
     }
+  }
+
+  .map-wrap {
+    height: 18rem;
   }
 }

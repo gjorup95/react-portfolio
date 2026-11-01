@@ -20,6 +20,29 @@
     height: auto;
     border-radius: 50%;
     border: 2px solid var(--on-primary-muted);
+    /* No square drag ghost or selection box when clicking the photo. */
+    -webkit-user-drag: none;
+    user-select: none;
+    transition: transform var(--dur-fast) var(--ease-out),
+      border-color var(--dur-fast);
+  }
+
+  &:hover img {
+    border-color: var(--on-primary);
+  }
+
+  /* Round press feedback instead of a square highlight. */
+  &:active img {
+    transform: scale(0.92);
+  }
+
+  /*
+   * Keyboard focus: a round ring drawn with box-shadow (follows the circle in
+   * every browser, unlike outline in older Safari), yellow so it shows on teal.
+   */
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary), 0 0 0 5px var(--highlight);
   }
 }
 

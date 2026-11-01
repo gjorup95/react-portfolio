@@ -4,8 +4,8 @@ import './index.scss'
 
 const About = () => {
   return (
-    <div className="container about-page">
-      <div className="text-zone">
+    <div className="container split-page about-page">
+      <div className="text-zone split-page__main">
         <h1>
           <AnimateLetters text="Om mig" />
         </h1>
@@ -29,7 +29,9 @@ const About = () => {
           </p>
         </div>
       </div>
-      <Spinner />
+      <div className="split-page__follow about-cube">
+        <Spinner />
+      </div>
     </div>
   )
 }

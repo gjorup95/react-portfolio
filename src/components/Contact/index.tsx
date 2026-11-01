@@ -49,8 +49,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container contact-page">
-        <div className="text-zone">
+      <div className="container split-page contact-page">
+        <div className="text-zone split-page__main">
           <h1>
             <AnimateLetters text="Kontakt" />
           </h1>
@@ -99,21 +99,21 @@ const Contact = () => {
               Send besked
             </button>
           </form>
-        </div>
 
-        <div className="map-wrap">
-          <MapContainer
-            center={[56.17547802941453, 10.204873863180014]}
-            zoom={13}
-            dragging={false}
-            doubleClickZoom={false}
-            scrollWheelZoom={false}
-            attributionControl={false}
-            zoomControl={true}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
-          </MapContainer>
+          <div className="map-wrap">
+            <MapContainer
+              center={[56.17547802941453, 10.204873863180014]}
+              zoom={13}
+              dragging={false}
+              doubleClickZoom={false}
+              scrollWheelZoom={false}
+              attributionControl={false}
+              zoomControl={true}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <Marker position={[56.17547802941453, 10.204873863180014]}></Marker>
+            </MapContainer>
+          </div>
         </div>
       </div>
       <Alerts formStatus={formStatus} formRef={form} />

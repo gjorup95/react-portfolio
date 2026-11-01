@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div className="nav-bar">
       <Link className="logo" to="/react-portfolio" aria-label="Forside">
-        <img src={profileLogo} alt="" />
+        <img src={profileLogo} alt="" draggable={false} />
       </Link>
       <nav className="sidebar" aria-label="Hovedmenu">
         <NavLink to="/react-portfolio" end aria-label="Forside">

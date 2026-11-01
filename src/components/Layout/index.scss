@@ -26,6 +26,37 @@
   padding: clamp(2rem, 6vh, 4rem) var(--gutter);
 }
 
+/*
+ * Split teal layout shared by every page: a tinted content column on the left
+ * and a teal panel on the right. The main content comes first in the tinted
+ * column; a "follow" block steps down and to the right (staggered) after it.
+ */
+.split-page {
+  --split: 62%;
+
+  display: grid;
+  grid-template-columns: var(--split) 1fr;
+  align-content: center;
+  row-gap: clamp(2.5rem, 6vh, 4rem);
+  /* No side padding, so the grid columns line up exactly with the colour split. */
+  padding-inline: 0;
+  background: linear-gradient(
+    to right,
+    var(--tint) var(--split),
+    var(--primary) var(--split)
+  );
+}
+
+.split-page__main {
+  grid-column: 1;
+  padding-left: var(--gutter);
+  padding-right: clamp(1.5rem, 4vw, 4rem);
+}
+
+.split-page__follow {
+  animation: riseIn var(--dur-enter) var(--ease-out) 0.35s both;
+}
+
 /* Text column shared by the About and Contact pages. */
 .text-zone {
   max-width: 34rem;
@@ -39,6 +70,11 @@
     max-width: 62ch;
   }
 
+  /* Width limits live on the paragraphs/form, since the split adds padding here. */
+  .split-page & {
+    max-width: none;
+  }
+
   /* Everything below the heading follows the heading's letters in. */
   > :not(h1) {
     animation: riseIn var(--dur-enter) var(--ease-out) 0.25s both;
@@ -46,6 +82,24 @@
 }
 
 @media (max-width: 900px) {
+  /* Stacked: one tinted column; each follow block sits in a full-width teal band. */
+  .split-page {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: var(--gutter);
+    background: var(--tint);
+  }
+
+  .split-page__main {
+    padding-inline: 0;
+  }
+
+  .split-page__follow {
+    grid-column: 1;
+    margin-inline: 0;
+    box-shadow: 0 0 0 100vmax var(--primary);
+    clip-path: inset(-2rem -100vmax);
+  }
+
   .App {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr;

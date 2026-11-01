@@ -1,27 +1,10 @@
 .home-page {
-  --split: 62%;
-
-  display: grid;
-  grid-template-columns: var(--split) 1fr;
-  align-items: center;
-  /* Split panel: tinted text side, teal side. */
-  background: linear-gradient(
-    to right,
-    var(--tint) var(--split),
-    var(--primary) var(--split)
-  );
-
-  /* No side padding, so the grid columns line up exactly with the colour split. */
-  padding-inline: 0;
-
   .text-zone {
     max-width: none;
 
     > :not(h1) {
       animation: none;
     }
-    padding-left: var(--gutter);
-    padding-right: clamp(1.5rem, 4vw, 4rem);
   }
 
   .name-header {
@@ -76,19 +59,8 @@
 }
 
 @media (max-width: 900px) {
-  .home-page {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding-inline: var(--gutter);
-    background: var(--tint);
-
-    .text-zone {
-      padding-inline: 0;
-    }
-
-    /* Scale with the viewport so the one-line name fits even on 320px screens. */
-    .name-header {
-      font-size: min(17vw, 5.5rem);
-    }
+  /* Scale with the viewport so the one-line name fits even on 320px screens. */
+  .home-page .name-header {
+    font-size: min(17vw, 5.5rem);
   }
 }

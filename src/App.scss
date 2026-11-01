@@ -125,6 +125,14 @@ button {
   outline-offset: 3px;
 }
 
+/* Turn off the browser's rectangular tap flash; links and buttons have their own states. */
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Buttons shared by every page */
 .button {
   display: inline-flex;

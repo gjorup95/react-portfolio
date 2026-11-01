@@ -15,8 +15,8 @@ const user = {
 
 const Home = () => {
   return (
-    <div className="container home-page">
-      <div className="text-zone">
+    <div className="container split-page home-page">
+      <div className="text-zone split-page__main">
         <h1 className="name-header">
           <span className="name-line">
             <AnimateLetters text={user.name} />

@@ -39,12 +39,20 @@ const PageReady = ({
   return null
 }
 
+/**
+ * "/react-portfolio" and "/react-portfolio/" are the same page; treat them as
+ * one so following a link to the page you're already on doesn't replay the
+ * page transition.
+ */
+const pageKey = (pathname: string) => pathname.replace(/\/+$/, '') || '/'
+
 const Layout = () => {
   const location = useLocation()
+  const page = pageKey(location.pathname)
   const pageRef = useRef<HTMLElement>(null)
   // The path whose page is mounted and ready; anything else means "loading".
   const [readyPath, setReadyPath] = useState<string | null>(null)
-  const loading = readyPath !== location.pathname
+  const loading = readyPath !== page
 
   return (
     // LazyMotion + `m` ships only the animation features this fade needs.
@@ -60,7 +68,7 @@ const Layout = () => {
               onExitComplete={() => pageRef.current?.scrollTo(0, 0)}
             >
               <m.div
-                key={location.pathname}
+                key={page}
                 className="page-transition"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 0.25, ease: EASE_OUT } }}
@@ -69,7 +77,7 @@ const Layout = () => {
                 {/* No fallback content: the top progress bar shows the wait. */}
                 <Suspense fallback={null}>
                   <FrozenOutlet />
-                  <PageReady path={location.pathname} onReady={setReadyPath} />
+                  <PageReady path={page} onReady={setReadyPath} />
                 </Suspense>
               </m.div>
             </AnimatePresence>

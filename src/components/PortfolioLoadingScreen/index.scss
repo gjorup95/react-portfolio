@@ -1,18 +1,19 @@
 .grid-containerPortfolio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  align-content: center;
   gap: 1.5rem;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 0 var(--gutter);
+  text-align: center;
+  /* Lets the header size itself from the column width (cqi units). */
+  container-type: inline-size;
 }
 
+/* Sized so the word spans the full column width. */
 .title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(5rem, 16vw, 12rem);
+  font-size: calc(100cqi / var(--title-ratio, 2.7));
   line-height: 0.85;
   color: var(--primary);
   animation: riseIn var(--dur-enter) var(--ease-out) both;
@@ -52,6 +53,6 @@ ul.animation-list {
 }
 
 .scrolling-indicator {
-  margin-top: 3rem;
-  padding-left: 1.5rem;
+  justify-self: center;
+  margin-top: 2.5rem;
 }

@@ -2,7 +2,7 @@ import './index.scss'
 import ScrollAnimation from '../ScrollAnimation'
 const PortfolioLoadingScreen = () => {
   return (
-    <div className="grid-containerPortfolio">
+    <div className="grid-containerPortfolio portfolio-column">
       <div className="title">Portfolio</div>
       <div className="box-display">
         <ul className="animation-list">
