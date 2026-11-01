@@ -7,25 +7,26 @@ const About = () => {
     <div className="page-column about-page">
       <div className="text-zone">
         <h1>
-          <AnimateLetters text="Om mig" />
+          <AnimateLetters text="About me" />
         </h1>
 
         <div className="text-block">
           <p>
-            Jeg er en ambitiøs fullstack udvikler med en øget interesse for
-            webudvikling og har min baggrund fra Aarhus Universitet, hvor jeg er
-            kandidat i IT-Produktudvikling.
+            I'm an ambitious full-stack developer with a strong interest in web
+            development, and I hold a master's degree in IT Product Development
+            from Aarhus University.
           </p>
           <p>
-            Jeg har en stor interesse for min egen udvikling, og interesserer mig
-            naturligt for at lære nye teknologier. Hvor jeg pt. er ved at udvikle mine kompetencer indenfor
-            ASP.NET Core samt Angular for at styrke min værktøjskasse indenfor webudvikling.
+            I care a lot about my own development and naturally enjoy learning new
+            technologies. Right now I'm building my skills in ASP.NET Core and
+            Angular to strengthen my web development toolbox.
           </p>
           <p>
-            På det personlige plan er jeg en udadvendt med en stor interesse for engagementet med
-            end-users og jeg trives bedst i fællesskaber med muligheder for
-            samarbejde, løsningsparathed og sparring. I min fritid nyder jeg at holde mig fysisk
-            aktiv ved at dyrke diverse sportsgrene og pleje mit konkurrencegen.
+            On a personal level, I'm outgoing with a strong interest in engaging
+            with end users, and I thrive in teams with room for collaboration,
+            solution-oriented thinking and sparring. In my free time I enjoy
+            staying physically active through a variety of sports and feeding my
+            competitive streak.
           </p>
         </div>
       </div>

@@ -8,7 +8,7 @@ test('renders the header navigation with the landing page active', () => {
       <App />
     </MemoryRouter>
   )
-  const nav = screen.getByRole('navigation', { name: 'Hovedmenu' })
+  const nav = screen.getByRole('navigation', { name: 'Main menu' })
   const link = (name: string) => within(nav).getByRole('link', { name })
 
   expect(link('Portfolio')).toHaveAttribute('href', '/react-portfolio')

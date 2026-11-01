@@ -11,10 +11,10 @@ const Header = () => {
 
   return (
     <header className="site-header">
-      <Link className="logo" to={HOME} aria-label="Forside">
+      <Link className="logo" to={HOME} aria-label="Home">
         <img src={profileLogo} alt="" draggable={false} />
       </Link>
-      <nav className="site-nav" aria-label="Hovedmenu">
+      <nav className="site-nav" aria-label="Main menu">
         <Link to={HOME} className={onLanding ? 'active' : undefined} aria-current={onLanding ? 'page' : undefined}>
           Portfolio
         </Link>

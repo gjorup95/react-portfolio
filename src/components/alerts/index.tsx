@@ -17,14 +17,14 @@ const Alerts = ({ formStatus, formRef }: AlertsProps) => {
 
   useEffect(() => {
     if (formStatus === 'pending') {
-      toastId.current = toast.loading('Sender...')
+      toastId.current = toast.loading('Sending…')
       return
     }
     if (toastId.current === null) return
     if (formStatus === 'done') {
       formRef.current?.reset()
       toast.update(toastId.current, {
-        render: 'Beskeden er sendt',
+        render: 'Message sent',
         type: 'success',
         isLoading: false,
         autoClose: 2500,
@@ -34,7 +34,7 @@ const Alerts = ({ formStatus, formRef }: AlertsProps) => {
     } else if (formStatus === 'error') {
       // The form is not reset, so the visitor can retry without retyping.
       toast.update(toastId.current, {
-        render: 'Beskeden blev ikke sendt. Prøv igen, eller skriv til mig på LinkedIn.',
+        render: "Your message wasn't sent. Please try again, or reach me on LinkedIn.",
         type: 'error',
         isLoading: false,
         autoClose: 6000,

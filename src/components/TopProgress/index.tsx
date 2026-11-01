@@ -53,7 +53,7 @@ const TopProgress = ({ active }: TopProgressProps) => {
     <div
       className="top-progress"
       role="progressbar"
-      aria-label="Indlæser side"
+      aria-label="Loading page"
       aria-hidden={!active}
     >
       <div className="top-progress__bar" ref={barRef} />

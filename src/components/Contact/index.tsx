@@ -44,19 +44,19 @@ const Contact = () => {
       <div className="page-column contact-page">
         <div className="text-zone">
           <h1>
-            <AnimateLetters text="Kontakt" />
+            <AnimateLetters text="Contact" />
           </h1>
 
           <p className="paragraph-contact">
-            Har du spørgsmål eller henvendelser er du meget velkommen til at
-            kontakte mig via mailformularen herunder, så vil jeg vende tilbage til dig hurtigst muligt.
+            Have a question or an inquiry? You're very welcome to get in touch
+            using the form below, and I'll get back to you as soon as possible.
           </p>
 
           <form ref={form} onSubmit={sendEmail} className="contact-form">
             <input
               className="input-item name"
-              placeholder="Navn"
-              aria-label="Navn"
+              placeholder="Name"
+              aria-label="Name"
               type="text"
               name="name"
               maxLength={100}
@@ -75,8 +75,8 @@ const Contact = () => {
 
             <input
               className="input-item topic"
-              placeholder="Emne"
-              aria-label="Emne"
+              placeholder="Subject"
+              aria-label="Subject"
               type="text"
               name="subject"
               maxLength={150}
@@ -85,8 +85,8 @@ const Contact = () => {
 
             <textarea
               className="input-item"
-              placeholder="Besked"
-              aria-label="Besked"
+              placeholder="Message"
+              aria-label="Message"
               name="message"
               maxLength={5000}
               required
@@ -96,7 +96,7 @@ const Contact = () => {
               className="button button--primary"
               disabled={formStatus === 'pending'}
             >
-              Send besked
+              Send message
             </button>
           </form>
 
