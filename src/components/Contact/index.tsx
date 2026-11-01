@@ -10,8 +10,6 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 import emailjs from '@emailjs/browser'
 import Alerts, { type FormStatus } from '../alerts'
 
-// Bundlers rename/inline Leaflet's default marker images, which breaks its
-// automatic icon-path detection, so point it at the imported assets.
 delete (L.Icon.Default.prototype as { _getIconUrl?: unknown })._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: markerIcon,
@@ -24,7 +22,6 @@ const Contact = () => {
   const form = useRef<HTMLFormElement>(null)
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    //do something else
     setFormStatus('pending')
     emailjs
       .sendForm(
